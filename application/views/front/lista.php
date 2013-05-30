@@ -2,119 +2,75 @@
 <html class="no-js">
 
 <head>
-<meta charset="utf-8" />
-<title>Carta na Escola</title>
-
-
-<script src="{base_url}js/bootstrap.js" type="text/javascript"></script>
-<link href="{base_url}css/bootstrap.css" rel="stylesheet"
-	type="text/css" />
-<link href="{base_url}/css/bootstrap-responsive.css" rel="stylesheet">
-
 
 <?php
 include 'script_css.php';
 ?>
 
-
+<style type="text/css">
+</style>
 
 </head>
 
 <body lang="en">
 
-	<header class="clearfix">
+	<div class="container ">
+		<!--  menu inicio -->
+		<?php
+		include 'menu.php';
+		?>
+		<!--  menu   fim -->
 
-		<!-- top widget -->
-		<div id="top-widget-holder">
-			<div class="wrapper">
-				<div id="top-widget">
-					<div class="padding"></div>
-				</div>
-			</div>
+		<!--  lista de materias inicio -->
+		<div class="row">
+
+		<div style='padding-left: 40px'>
+			<h2>{lista_legenda}</h2>
 		</div>
-		<!-- ENDS top-widget -->
 
-		<div class="wrapper clearfix">
-
-			<?php
-			include 'menu.php';
-			?>
-		</div>
-	</header>
-
-	<!-- MAIN -->
-	<div id="main">
-		<div class="wrapper">
-
-			<div class="container-fluid">
-            <h2 class="page-heading">
-						<span>{lista_legenda}</span>
-					</h2>
-				
 			
-                {recordset}
-				<div class="row">
+		
+			
+		
+			{recordset}
 
-					<div class="span10">
-						<div class="span2" style="padding: 5px">
 
-							<a href="{base_url}single/show/{id}"><img src="{base_url}/upload/{imagem_fundo}" alt="{titulo}"
-								title="{titulo}"  /></a>
-						</div>
+			<div class="span3" style='margin-bottom: 15px; height: 300px'>
 
-						<div class="span7">
+				<div style='border: 1px solid grey; padding: 5px'>
 
-							<span style="font-size: 12px">Edição: {edicao} </span>
-							<h4 class="post-heading">{titulo}</h4>
-                            <br>
-							{descricao} <a href="{base_url}single/show/{id}"> leia mais...</a>
-                      
-
-						</div>
-					</div>
+					<h5>{titulo}</h5>
+					<a href="{base_url}single/show/{id}"><img
+						src="{base_url}upload/{imagem_fundo}" alt="{titulo}" /> </a>
+					<p class="olho">{descricao}</p>
+					<p class="leiamais">
+						<a class="btn btn-mini" href="{base_url}single/show/{id}">leia
+							mais</a>
+					</p>
 				</div>
-
-				{/recordset}
-
-				<div class="row">{paginacao}</div>
-
 			</div>
 
+
+			{/recordset}
+
+			
+
+
 		</div>
+		<div class="row">{paginacao}</div>
+		
+		<!--  lista de materias fim -->
+		<hr>
+		<!--  rodape inicio -->
+
+		<?php
+		include 'rodape.php';
+		?>
+
+		<!--  rodape fim -->
+
+
 	</div>
-
-	<footer>
-
-		<div class="wrapper">
-
-			<ul class="widget-cols clearfix">
-				<li class="first-col"><?php
-				include 'primeira_coluna.php';
-				?>
-				</li>
-
-				<li class="second-col"><?php
-				include 'segunda_coluna.php';
-				?>
-				</li>
-
-				<li class="third-col"><?php
-				include 'terceira_coluna.php';
-				?>
-				</li>
-
-				<li class="fourth-col"><?php
-				include 'quarta_coluna.php';
-				?>
-				</li>
-			</ul>
-
-			<?php
-			include 'footer_bottom.php';
-			?>
-
-		</div>
-	</footer>
-
 </body>
+
 </html>

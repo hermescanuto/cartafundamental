@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /*
-| -------------------------------------------------------------------------
+ | -------------------------------------------------------------------------
 | URI ROUTING
 | -------------------------------------------------------------------------
 | This file lets you re-map URI requests to specific controller functions.
@@ -38,7 +38,13 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "home";
+
+$route['edicao/(:num)'] = "edicao/paging/$1";
+
+$route['mobile/single/(:num)'] = "mobile/single/show/$1";
+
+
 $route['404_override'] = '';
 
 

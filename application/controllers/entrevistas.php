@@ -69,6 +69,8 @@ class Entrevistas extends CI_Controller {
 		$data['base_url'] = base_url();
 		$data['local'] = $this -> data['local'];
 		$data['lista_legenda'] = $this -> data['lista_legenda'] ;
+		$data["alvo_materias"] ='active';
+		$data["alvo_entrevistas"] ='active';
 		$this -> parser -> parse('front/lista', $data);
 		// Carrega o view de listagem de materia
 

@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class Reportagens extends CI_Controller {
+class tema_aulas extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';
@@ -14,8 +14,8 @@ class Reportagens extends CI_Controller {
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
 		$this -> data['local'] = $this -> uri -> segment("2");
-		$this -> data['tipo_busca'] = 4;
-		$this -> data['lista_legenda'] = "Reportagens";
+		$this -> data['tipo_busca'] = 1;
+		$this -> data['lista_legenda'] = "Tema Aulas";
 	}
 
 	public function index() {
@@ -45,7 +45,7 @@ class Reportagens extends CI_Controller {
 		$fields = "*";
 		$orderby = 'id desc';
 
-		$busca = $this -> uri -> segment("5");
+		$busca = $this -> uri -> segment("4");
 		if (is_numeric($busca)) {
 			$campo_busca = 'edicao';
 		} else {
@@ -62,13 +62,15 @@ class Reportagens extends CI_Controller {
 
 
 
-		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby);
+		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4");
 		// cria a paginação
 		$data = $result;
 
 		$data['base_url'] = base_url();
 		$data['local'] = $this -> data['local'];
 		$data['lista_legenda'] = $this -> data['lista_legenda'] ;
+		$data["alvo_materias"] ='active';
+		$data["alvo_temaaula"] ='active';
 		$this -> parser -> parse('front/lista', $data);
 		// Carrega o view de listagem de materia
 

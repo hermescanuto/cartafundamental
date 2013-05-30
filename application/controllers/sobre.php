@@ -20,7 +20,7 @@ class Sobre extends CI_Controller {
 
 	public function index() {
 
-		$this->data["alvo_sobre"] ='current-menu-item';
+		$this->data["alvo_sobre"] ='active';
 		$this -> parser -> parse('front/sobre', $this -> data);
 	}
 
