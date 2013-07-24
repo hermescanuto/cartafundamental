@@ -29,6 +29,9 @@ $(document).ready(
 								'Favor escolher uma área');
 						erro += valid_field('texto', '',
 								'Favor inserir o texto');
+						
+					
+						
 						valid_error('form1', erro);
 					});
 

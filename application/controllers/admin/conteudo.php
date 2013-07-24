@@ -4,7 +4,7 @@
  * Hermes hermes@hermes-Vostro-3500
 * 1.0
 * 2011-06-10
-* VoleiSP
+* corta na  escola
 *
 */
 
@@ -30,13 +30,10 @@ class Conteudo extends CI_Controller {
 		$this->data['js']= 	array(
 				array('js_url' => 'http://code.jquery.com/jquery-latest.min.js'),
 				array('js_url' => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'),
-				array('js_url' =>  base_url().'js/bootstrap.js'),
-				 
-					
+				array('js_url' =>  base_url().'js/bootstrap.js'),				
 				array('js_url' =>  base_url().'js2/ckeditor/ckeditor.js'),
 				array('js_url' =>  base_url().'js2/ckeditor/adapters/jquery.js'),
-				array('js_url' =>  base_url().'js2/util.js'),
-					
+				array('js_url' =>  base_url().'js2/util.js'),					
 				array('js_url' =>  base_url().'js2/lista_confirma_delete.js'),
 		);
 		$this->data['css']= array(
@@ -82,9 +79,11 @@ class Conteudo extends CI_Controller {
 		$data["imagem_fundo"] = "http://placehold.it/446x283";
 		$data["up_imagem_home"]=null;
 		$data["up_imagem_fundo"]=null;
-
+		
+		$data['base_url'] = base_url();
 		$data['save']		= base_url().'admin/'.$this->data['local'].'/save';
 		$this->parser->parse( $this->data['local'].'/painel_entrada',$data);
+		
 		 
 		$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
 	}
@@ -95,6 +94,29 @@ class Conteudo extends CI_Controller {
 	* idx = id da materia
 	*/
 	function ShowReport($idx) {
+		
+		
+		$data = $this -> Model_util -> ByIDtoTemplate('vw_lock', $idx, 'tb_conteudo_id');
+		
+		// verifica se o registro esta livre
+		if ( $data['id'] == null or $data['tb_usuario_id'] == $this->session->userdata('user_id') ){
+			
+			
+          // registro sava no banco 
+				
+			if ( $data['tb_usuario_id'] != $this->session->userdata('user_id') ){
+				$campos= array(
+						'tb_conteudo_id' => $idx,
+						'tb_usuario_id'  => $this->session->userdata('user_id')
+				);
+				$this->Model_util->setTableData('tb_lock');
+				$this->Model_util->setID(NULL);
+				$this->Model_util->setData($campos);
+				$this->Model_util->save();
+			}	
+			
+			
+		
 		$this -> pag_conf();
 		$this -> util -> ShowADMTopPage($this -> data);
 		// carrega o topo do adm
@@ -147,6 +169,27 @@ class Conteudo extends CI_Controller {
 		$this -> parser -> parse($this -> data['local'] . '/painel_entrada', $data);
 		$this -> util -> ShowADMBottomPage();
 		// Carrega o rodape do adm
+		
+		}else{
+				
+			
+			$recordset = $this -> Model_util -> ByIDtoTemplate('tb_usuario', $data['tb_usuario_id'] );
+			
+			$data['msg']= 'Conteúdo Trancado por '.$recordset['nome'].' em '. $data['data_criacao']. ' ID: '.$idx; ;
+			
+			
+			$this->pag_conf();
+			$this->util->ShowADMTopPage($this->data); // carrega o topo do adm
+			$this->util->ShowADMMenu(0) ; // carrega o menu adm
+				
+			
+				
+			$this -> parser -> parse('util/msg', $data);
+			
+			$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
+				
+		}
+				
 	}
 	/*
 	 *
@@ -159,35 +202,55 @@ class Conteudo extends CI_Controller {
 	function save()
 	{
 
-		/*		$this->pag_conf();
-		 $this->util->ShowADMTopPage($this->data); // carrega o topo do adm
-		$this->util->ShowADMMenu(0) ; // carrega o menu adm	 */
 
 		$id = $this->input->post('id');
-		$campos = Array
-		(
-				'titulo' 				=> $this->input->post('titulo'),
-				'descricao' 			=> $this->input->post('descricao'),
-				'texto' 				=> $this->input->post('texto_ckeditor'),
-				'tb_tipo_conteudo_id'	=> $this->input->post('tb_usuario_area_id')
-					
-		);
-
+        
 		$campos = $_POST;
+		
 
 		$campos['texto'] = $this->input->post('texto_ckeditor');
 		$campos['texto_extra'] = $this->input->post('texto_extra_ckeditor');
 		$campos['tb_tipo_conteudo_id'] = $this->input->post('tb_usuario_area_id');
+		
+        
+       if ($id){
+            
+            $campos['alterador'] = $this->session->userdata('user_id');
+            $campos['data_alteracao'] = date("Y-m-d H:i:s");
+        }else{
+            
+            $campos['criador'] = $this->session->userdata('user_id');
+        }
 
 		$this->Model_util->setTableData($this->tabela);
 		$this->Model_util->setID($id);
 		$this->Model_util->setData($campos);
 		$this->Model_util->save();
+		
+		// se existe id entao checkou na materia
+		
+		if ( $id ){
+			
+			$data = $this -> Model_util -> ByIDtoTemplate('vw_lock', $id, 'tb_conteudo_id');
+			
+			$id=$data['id'];	
+			$this->Model_util->setTableData('tb_lock');
+			$this->Model_util->setID($id);
+			$this->Model_util->setData(Array('visivel'=> 0,'data_checkout' => date("Y-m-d H:i:s") ));
+			$this->Model_util->save();
+						
+		}
+		
+		
+		
 
 		$this->paging();
 
-		$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
 	}
+	
+
+
+	
 
 	/*
 	 *
@@ -221,6 +284,7 @@ class Conteudo extends CI_Controller {
 		$busca = $this->uri->segment("5") ;
 		if ( is_numeric($busca) )  {
 			$campo_busca = 'edicao' ;
+			$orderby = 'edicao asc';
 		}else{
 
 			$campo_busca = 'titulo';
@@ -239,9 +303,7 @@ class Conteudo extends CI_Controller {
 
 		//print_r ($where);
 
-		$result=$this->util->PaginationOn($table,5,base_url().'admin/'.$this->data['local'].'/paging',$fields,$where,$orderby); // cria a paginação
-		
-	
+		$result=$this->util->PaginationOn($table,20,base_url().'admin/'.$this->data['local'].'/paging',$fields,$where,$orderby); // cria a paginação
 		$data = $result;
 
 		$data['base_url']=base_url();
@@ -263,15 +325,66 @@ class Conteudo extends CI_Controller {
 	function DeleteReport($idx,$page)
 	{
 
+
 		$this->data['local']=$this->uri->segment("2");
+
+		$r = $this -> Model_util -> showHome();
+
+		for ($i = 0; $i <= 2; $i++) {
+			$this -> data["id_$i"] = $r[$i]['id'];
+		}
+
+
+
+
+		if ( 	$idx == $this -> data["id_0"] or
+		$idx == $this -> data["id_1"] or
+		$idx == $this -> data["id_0"] ){
+				
+			$this->pag_conf();
+			$this->util->ShowADMTopPage($this->data); // carrega o topo do adm
+			$this->util->ShowADMMenu(0) ; // carrega o menu adm
 			
+			$data['msg']= "Este ID não pode ser deletado, pois está marcado no carrosel da HOME";
+			
+			$this -> parser -> parse('util/msg', $data);
+
+			$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
+				
+		}else{
+			
+			$this->Model_util->setTableData($this->tabela);
+			$this->Model_util->setID($idx);
+			$this->Model_util->setData(Array('visivel'=> 0));
+			//$this->Model_util->delete();
+			$this->Model_util->save();
+			redirect(base_url().'admin/'.$this->data['local'].'/paging/'.$page); // retorna para pagina que foi chamado
+		}
+
+	}
+	
+	
+	/*
+	 *
+	* @autor	Hermes Canuto de Souza
+	* publica ou nao a materia no site
+	* idx = id do relatorio
+	* $status = status atual da mateira
+	*/
+	
+	function publish($idx,$status){
+		
+		$this->data['local']=$this->uri->segment("2");
+		
+		$new_status = ($status == 1) ? 0 : 1;	
+		
 		$this->Model_util->setTableData($this->tabela);
 		$this->Model_util->setID($idx);
-		$this->Model_util->setData(Array('visivel'=> 0));
-		//$this->Model_util->delete();
+		$this->Model_util->setData(Array('publicar'=> $new_status));
 		$this->Model_util->save();
-		redirect(base_url().'admin/'.$this->data['local'].'/paging/'.$page); // retorna para pagina que foi chamado
-
+		
+		redirect( base_url().'admin/'.$this->data['local'] );
+		
 	}
 
 }

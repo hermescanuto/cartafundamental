@@ -19,7 +19,7 @@ class Contato extends CI_Controller {
 	}
 
 	public function index() {
-		$this -> data["alvo_contato"] = 'active';
+		$this -> data["alvo_contato"] = 'current-menu-item';
 		$this -> parser -> parse('front/contato', $this -> data);
 	}
 
@@ -31,12 +31,11 @@ class Contato extends CI_Controller {
 		$comments = $this -> input -> post('comments');
 
 		$msg = "";
-		$msg += "<br/> Nome:$name ";
-		$msg += "<br/> Email:$email ";
-		$msg += "<br/> Website:$$web ";
-		$msg += "<br/> Comentario:<br/>$name ";
+		$msg = $msg ."<br/> Nome:$name ";
+		$msg = $msg ."<br/> Email:$email ";
+		$msg = $msg ."<br/><br/>  Comentario:<br/>$comments ";
 
-		//echo $msg;
+		echo $msg;
 
 		$this -> load -> library('email');
 
@@ -48,14 +47,15 @@ class Contato extends CI_Controller {
 		$this -> email -> initialize($config);
 
 		$this -> email -> from('cartanaescola@cartanaescola.com.br', 'contato');
-		$this -> email -> to('hermes@cartacapital.com.br');
+		$this -> email -> to($to);
 
-		$this -> email -> subject('Contato');
+		$this -> email -> subject('Contato - Carta na Escola');
 		$this -> email -> message($msg);
 
 		$this -> email -> send();
 
-	    $this -> parser -> parse('front/resposta_contato', $this -> data);
+	   $this -> parser -> parse('front/resposta_contato', $this -> data);
+
 
 	}
 

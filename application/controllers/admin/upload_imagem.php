@@ -57,9 +57,9 @@ class Upload_imagem  extends CI_Controller {
 	function novo()
 	{
 
-		$pic[1] = 'Home HOME';
-		$pic[2] = 'Imagem HOME MENOR ';
-		$pic[3] = 'Imagem da CAPA';
+		$pic[1] = 'da Homes ( carrosel ) 960px por 473px RBG 75dpi';
+		$pic[2] = 'da matéria aberta 446px por 283px 75dpi, no maximo 550px de largura ';
+		$pic[3] = 'da CAPA 377px por 489px 75dpi';
 		$pic[4] = 'Imagens ilustrativa 245px de largura por altura livre';
 		$pic[5] = 'Thumb 100px por 100px';
 

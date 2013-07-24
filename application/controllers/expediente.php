@@ -20,8 +20,7 @@ class Expediente extends CI_Controller {
 
 	public function index() {
 
-		$this->data["alvo_sobre"] ='active';
-		$this->data["alvo_expediente"] ='active';
+		$this->data["alvo_sobre"] ='current-menu-item';
 		$this -> parser -> parse('front/expediente', $this -> data);
 	}
 

@@ -7,6 +7,8 @@
 		</li>
 		<li><a href="#tabs-3">Imagens</a>
 		</li>
+		<li><a href="#tabs-4">Home</a>
+		</li>
 	</ul>
 
 	<form name="form1" id="form1" action="{save}" method="post"
@@ -31,6 +33,10 @@
 							name="sub_classificacao" id="sub_classificacao" size="100"
 							maxlength="100" value="{sub_classificacao}"
 							placeholder="Sub Classificação" style="width: 400px"/>
+							
+							<label class="control-label">Ordem:</label> <input type="text"
+							name="ordem" id="ordem" size="200" maxlength="200"
+							value="{ordem}" placeholder="ordem" style="width: 400px" />
 
 					</div>
 
@@ -83,7 +89,11 @@
 				<input type="text" name="credito_foto" id="credito_foto" size="100"
 					maxlength="100" value="{credito_foto}" style="width: 400px"
 					placeholder="Foto de:" />
-
+					
+				<label class="control-label" for="legenda_foto">Legenda Foto :</label>
+				<input type="text" name="legenda_foto" id="legenda_foto" size="100"
+					maxlength="100" value="{legenda_foto}" style="width: 400px"
+					placeholder="Legenda" />
 			</div>
 			<div class="control-group">
 				<label class="control-label">PDF free: <a
@@ -104,15 +114,33 @@
 					class="img-polaroid" />
 			</p>
 		</div>
+		
+		
+		<div id="tabs-4">
+			<label class="control-label">Titulo Home:</label> <input type="text"
+							name="titulo_home" id="titulo_home" size="200" maxlength="200"
+							value="{titulo_home}" placeholder="Titulo" style="width: 400px" /> <label
+							class="control-label" for="descricao">Olho Home:</label>
+						<textarea name='descricao_home' id='descricao_home'
+							style="height: 80px; width: 400px"
+							placeholder="Uma breve descrição do texto principal">{descricao_home}</textarea>
+		
+						<div id="chars">138</div>
+
+		
+		</div>
+		
 	</form>
 </div>
 <hr />
 <input
 	type="button" value="Salvar" id="salvar" class="btn btn-mini" />
-
+<script src="{base_url}/js/limiter.js"></script>
 <script>
 	$(document).ready(function() {
 
+		var elem = $("#chars");
+		$("#descricao_home").limiter(138, elem);
 		
 
 
@@ -164,6 +192,8 @@
 			//erro += valid_field('titulo','','Favor inserir um titulo');
 			erro += valid_field('tb_usuario_area_id', '-1', 'Favor escolher uma área');
 			erro += valid_field('texto', '', 'Favor inserir o texto');
+			erro += valid_field('titulo_home', '','Favor inserir o Titulo HOME');	
+			erro += valid_field('descricao_home', '','Favor inserir o DESCRIÇÃO HOME');
 			valid_error('form1', erro);
 		});
 

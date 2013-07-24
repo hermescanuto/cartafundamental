@@ -6,7 +6,7 @@ class Edicao extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';
-	protected $view = 'vw_conteudo';
+	protected $view = 'vw_conteudo_publicado';
 
 	function __construct() {
 		parent::__construct();
@@ -14,6 +14,7 @@ class Edicao extends CI_Controller {
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
 		$this -> data['local'] = $this -> uri -> segment("1");
+
 		$this -> data['lista_legenda'] = "Edicao";
 	}
 
@@ -37,9 +38,11 @@ class Edicao extends CI_Controller {
 
 		$table = $this -> view;
 		$fields = "*";
-		$orderby = 'id desc'; 
+		$orderby = 'edicao desc, ordem asc ';
 
-		$where = array('edicao' => $busca);
+		 
+
+		$where = array('edicao' => $busca, 'publicar'=>1);
 
 		$result = $this -> util -> PaginationOn($table, 100, base_url() . $this -> data['local'] . '/paging', $fields, $where, $orderby, "3", "4");
 

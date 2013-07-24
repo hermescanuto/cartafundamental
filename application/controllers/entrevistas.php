@@ -2,11 +2,11 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class Entrevistas extends CI_Controller {
+class entrevistas extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';
-	protected $view = 'vw_conteudo';
+	protected $view = 'vw_conteudo_publicado';
 
 	function __construct() {
 		parent::__construct();
@@ -21,6 +21,12 @@ class Entrevistas extends CI_Controller {
 	public function index() {
 		$this -> paging();
 		// paginacao
+	}
+	
+	public function monta($id){
+		
+		
+		
 	}
 
 	/*
@@ -43,7 +49,7 @@ class Entrevistas extends CI_Controller {
 
 		$table = $this -> view;
 		$fields = "*";
-		$orderby = 'id desc';
+		$orderby = '';
 
 		$busca = $this -> uri -> segment("4");
 		if (is_numeric($busca)) {
@@ -55,22 +61,20 @@ class Entrevistas extends CI_Controller {
 
 		if ($busca != null) {
 
-			$where = array($campo_busca => urldecode($busca) , 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] );
+			$where = array($campo_busca => urldecode($busca) );
 		} else {
-			$where = array( 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] );
+			$where = null;
 		}
 
 
 
-		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4");
+		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4",$this -> data['tipo_busca']);
 		// cria a paginação
 		$data = $result;
 
 		$data['base_url'] = base_url();
 		$data['local'] = $this -> data['local'];
 		$data['lista_legenda'] = $this -> data['lista_legenda'] ;
-		$data["alvo_materias"] ='active';
-		$data["alvo_entrevistas"] ='active';
 		$this -> parser -> parse('front/lista', $data);
 		// Carrega o view de listagem de materia
 

@@ -7,6 +7,7 @@
 	height: 50px;
 	line-height: 120%;
 	text-align: justify;
+	color: white;
 }
 
 .leiamais {
@@ -26,6 +27,9 @@
 	padding: 9px;
 }
 
+.h5 {
+	color: white;
+}
 
 .center {
      float: none;
@@ -57,15 +61,5 @@
 }
 
 .logotipo{
-	margin-bottom: 10px;
-}
-
-
-ul.nav li.dropdown:hover > ul.dropdown-menu{
-    display: block;    
-}
-
-
-a.menu:after, .dropdown-toggle:after {
-    content: none;
+	margin-bottom: 25px;
 }
