@@ -62,7 +62,7 @@ body {
 	<div class="container">
 
 		<form class="form-signin" action="{logon}" method="post">
-			<img src="{base_url}/img/logoEscola.jpg" /> <input type="text"
+			<img src="{base_url}/img/LogoNovoCartaFundamental.png" /><input type="text"
 				class="input-block-level" placeholder="Usuario" id="user"
 				name="user"> <input type="password" class="input-block-level"
 				placeholder="Password" id="pass" name="pass">
