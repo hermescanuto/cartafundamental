@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Carta Fundamental | {titulo}"</title>	
+	<title>Carta Fundamental | Titulo da Pagina"</title>	
 
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{base_url}css/cartafundamental.css">
@@ -46,22 +46,13 @@
 		<?php include('menu.php') ?>
 		<!-- menu  -->
 
-		<!-- Barra da imagem da materia  -->
-		<div class="row fundo_branco">	
-			<div class="col-lg-10 col-lg-offset-1 fundo_branco">
-				<img src="{base_url}upload/{imagem_fundo}" alt="{titulo}" class='img-responsive' >
-				<p class="legenda_foto">{legenda_foto}</p>
-			</div>
-		</div>
-		<!-- Barra da imagem da materia  -->
-
+	
 
 		<!-- Barra cinza -->
-		<div class="row barra_cinza">	
+		<div class="row fundo_branco">	
 			<div class="col-lg-10 col-lg-offset-1 barra_cinza" id='barra_cinza'>
-				<h1><span class="aspas">//</span>{titulo}</h1>
-				<p>{descricao}</p>
-				<p>{credito_foto}</p>
+				<h2><span class="aspas">//</span>Download das Edições</h2>
+			
 			</div>
 		</div>
 		<!-- Barra cinza   -->
@@ -70,22 +61,23 @@
 		<!-- Barra do conteudo  -->
 		<div class="row fundo_branco" id='barra_conteudo'>
 			<!-- coluna 1 -->
-			<div class="col-lg-7 col-md-9 col-lg-offset-1 fundo_branco" id='coluna1'>	
+			<div class="col-md-9 col-lg-7  col-lg-offset-1 fundo_branco" id='coluna1'>	
 
-				<h4><span class="aspas">//</span>Por {autor} — publicado na edição {edicao}, de {edicao_mes} de {ano} </h4>
+				<h4><span class="aspas">//</span>Erro !</h4>
 				
-				<p>{texto}<p>
+				<p>
+		
 
-					<br>	
 
-					<button type="button" class="btn btn-default"><a href="http://www.mercadoconfianca.com.br/" target='_blank'>Assine Carta Fundamental</a></button>
-					<br>
 
+				<p>
+
+					
 					<hr class='row-divider'>
 
 				</div>
 				<!-- coluna 2 -->
-				<div class="col-lg-3 col-md-3 fundo_branco" id='coluna2'>
+			<!-- 	<div class="col-lg-3 col-md-3 fundo_branco" id='coluna2'>
 					<h4  ><span class="aspas">//</span>Edição do mês {edicao_numero} </h4>
 					<a href="{base_url}edicao/{edicao_numero}" class="opener">
 						<img src="{base_url}upload/capa/{edicao_capa}" alt="Capa {edicao_numero} abril Carta na Escola revista mensal" width="205" height="261"  />
@@ -93,8 +85,8 @@
 
 					<h4><span class="aspas">//</span> Saiba Mais</h4>
 
-					<p>{texto_extra}</p>
-				</div>
+					<p>Conteudo extra</p>
+				</div> -->
 
 
 			</div>
@@ -112,6 +104,6 @@
 
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>	
-		
+	<script src="{base_url}js/ajuste.js"></script>		
 </body>
 </html>

@@ -34,8 +34,7 @@ class Model_util extends MY_Model {
         
         $this -> db -> order_by("id", "RANDOM");
         
-        //$recordset = $this -> db -> get_where('vw_conteudo', array('imagem_home !=' => "", 'publicar' => 1));
-        $recordset = $this -> db -> get_where('vw_conteudo', array( 'publicar' => 1));
+        $recordset = $this -> db -> get_where('vw_conteudo', array('imagem_home !=' => "", 'publicar' => 1));
         
 
         return $recordset -> result_array();
@@ -360,7 +359,7 @@ class Model_util extends MY_Model {
     
     function lista_acervo(){
     	
-    	$this->db->where('edicao >=', 69 ) ;
+    	$this->db->where('edicao >=', 62 ) ;
     	$query = $this -> db -> get('vw_edicao');
     	$recorset = $query -> result_array();
     	return  $recorset;

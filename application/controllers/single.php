@@ -57,6 +57,14 @@ class Single extends CI_Controller {
 		
 		
 		$this->data['url'] = base_url().'single/show/'.$idx.'/'.$this->util->slugify(  $data["titulo"] );
+
+
+		// busca a capa
+
+		$recordset = $this->Model_util->getCapa(58);
+
+		$this->data['edicao_capa'] = $recordset['imagem_capa'];
+		$this->data['edicao_numero'] = $recordset['edicao'];
 		
 		$this -> parser -> parse('front/single', $this -> data + $data);
 	}

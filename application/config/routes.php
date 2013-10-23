@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "adm";
+$route['default_controller'] = "home";
 
 $route['edicao/(:num)'] = "edicao/paging/$1";
 

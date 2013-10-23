@@ -43,13 +43,13 @@ class Upload_pdf  extends CI_Controller {
 				array('js_url' => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'),
 				array('js_url' =>  base_url().'js/bootstrap.js'),
 
-				array('js_url' =>  base_url().'js2/util.js'),
+				array('js_url' =>  base_url().'js/util.js'),
 				 
 		);
 		$this->data['css']= array(
 				array('css_url' => base_url().'css/bootstrap.css'),
 				array('css_url' => 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css'),
-				array('css_url' => base_url().'css2/style.css'),
+				array('css_url' => base_url().'css/style.css'),
 		);
 		$this->data['local'] =  $this->uri->segment("2");
 	}

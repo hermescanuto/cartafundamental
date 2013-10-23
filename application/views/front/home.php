@@ -1,298 +1,212 @@
 <!doctype html>
-<html class="no-js">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<head>
-		<meta charset="utf-8" />
-		<title>Carta na Escola</title>
+	<title>Carta Fundamental | Titulo da Pagina"</title>	
 
-		<?php
-        include 'script_css.php';
-		?>
-		
-		<style>
-		#floated-content, strong {
-			color : rgb(197, 35, 35);
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css">
+	<link rel="stylesheet" href="{base_url}css/cartafundamental.css">
+
+	<!--fontes -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+
+	<base href="{url}"/>
+	<link rel="image_src" href="{base_url}upload/{imagem_fundo}"/>
+	<meta name="description" content="{descricao}" />
+	<meta property="og:site_name" content="Carta Fundamental"/>
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{titulo}" />
+	<meta property="og:description" content="{descricao}"/>
+	<meta property="og:image" content="{base_url}upload/{imagem_fundo}"/>
+	<meta property="og:image:height" content="133"/>
+	<meta property="og:image:width" content="200"/>
+	<meta property="og:url"	content="{url}"/>
+
+	<!-- Icones para favoritos -->
+	<?php include 'faveicon.php'; ?>
+
+	<style type="text/css">
+
+	@media (min-width: 1200px) {
+
+		.col-lg-3 {
+			width: 21%
 		}
-		
-		
-		.link-assine {
-		display: block;
-		margin: 10px;
-		background: #D1282F;
-		
-		font-size: 1.0em;
-		color: #fff !important; }
-		
+	}
 
-		.footer-bottom {
-			padding-top: 0px;
-			margin-bottom: 0px;
-			overflow: hidden;
-		}
-		
-		</style>
+	.img-responsive {
 
-		<?php
-        include 'googleanalytics.php';
-		?>
-	</head>
+		max-width: 95%;
+	}
 
-	<body lang="en">
-	<?php
-        include 'barra_simples.php';
-		?>
 
-		<header class="clearfix">
+  @media (min-width: 768px ){
+	
+	.botao_assine{
+		margin-top: 30%;
+	}
+  }
 
-			<!-- top widget -->
+   @media (max-width: 767px){
+	
+	.botao_assine{
+		margin-top: 10px;
+		margin-bottom: 10px;
 
-			<div id="top-widget">
-				<div class="padding"></div>
-			</div>
+	}
+  }
 
-			<!-- ENDS top-widget -->
+	</style>
 
-			<div class="wrapper clearfix">
 
-				<?php
-                include 'menu.php';
-				?>
 
-			</div>
-		</header>
+	<!-- Google Analitics -->
+	<?php include 'googleanalytics.php'; ?> </head>
+	<body>
 
-		<!-- MAIN -->
-		<div id="main">
-			<div class="wrapper">
-				<!-- slider holder -->
-				<div id="slider-holder" class="clearfix">
-					<!-- slider -->
-					<div class="flexslider home-slider">
-						<ul class="slides">
-							<li><a href="{base_url}single/show/{destaque_id0}"><img src="{base_url}upload/{imagem_home0}" alt="{titulo0}" /></a>
-								<p class="flex-caption">
-									<a href="{base_url}single/show/{destaque_id0}">{titulo_destaque0}</a>
-									<br><span style='font-size: 13px'>{desc0}</span>
-								</p>
-							</li>
-							<li><a href="{base_url}single/show/{destaque_id1}"><img src="{base_url}upload/{imagem_home1}" alt="{titulo1}" /></a>
-								<p class="flex-caption">
-									<a href="{base_url}single/show/{destaque_id1}">{titulo_destaque1}</a>
-									<br><span style='font-size: 13px'>{desc1}</span>
-								</p>
-							</li>
-							<li><a href="{base_url}single/show/{destaque_id2}"><img src="{base_url}upload/{imagem_home2}" alt="{titulo2}" /></a>
-								<p class="flex-caption">
-									<a href="{base_url}single/show/{destaque_id2}">{titulo_destaque2}</a>
-									<br><span style='font-size: 13px'>{desc2}</span>
-								</p>
-							</li>
-						</ul>
-					</div>
+		<!-- Barra da simples -->
 
-					<!-- ENDS slider -->
-					<div class="home-slider-clearfix "></div>
-					<!-- Headline -->
-					<div id="headline" style="text-align:center;  "margin-bottom: 22px;">
-						<a href="http://www.mercadocapital.com.br/CartaEscola.asp?Site_txt=MERCADOCAPITAL&Origem_txt=&Formato_txt=LINKDIRETO&Banner_txt=&Versao_txt=" class="link-assine" target="_blank">Assine Carta na Escola</a>
-						<p>
-							
-							<a href="{base_url}edicao/{edicao_numero}" class="opener"><img
-							src="{base_url}/upload/capa/{edicao_capa}"
-							alt="Capa {edicao_numero} abril Carta na Escola revista mensal"
-							width="205" height="261" /> </a>
-							<br>
-                            
-							Edição
-							N&deg;{edicao_numero} | <a href="{base_url}acervo">Edições Anteriores</a>
-						</p>
-                        
+		<!-- Barra da simples  -->
 
-						<em id="corner"></em>
-					</div>
-					<!-- ENDS headline -->
+		<div class="container">
+
+			<!--  Barra do logotipo -->
+			<?php include('logotipo.php') ?>
+			<!--  Barra do logotipo -->
+
+			<!-- menu  -->	
+			<?php include('menu.php') ?>
+			<!-- menu  -->
+
+			<!-- Carosel  -->
+			<div class="row fundo_branco">
+				<div class="col-lg-10 col-lg-offset-1 fundo_branco">
+					<?php include('carosel.php') ?>		
+
+					<hr class='row-divider'>
+
 				</div>
 
-				<!-- ENDS slider holder -->
-				<!-- home-block -->
-				<div class="home-block">
-					<h2 class="page-heading"><span>Atualidades em sala de aula </span></h2>
-					<br>
-					<div class="one-third-thumbs clearfix">
-						<figure>
+			</div>	
+			<!-- Carosel  -->
 
-							<div style="height: 300px">
-							
-							  <h5 class="post-heading"><strong>{sub0}</strong></h5>
 
-								<a href="{base_url}single/show/{id0}"><img
-								src="{base_url}upload/{imagem0}" alt="{titulo0}" /> </a>	
-		
-                                <h4 class="post-heading">{titulo0}</h4>
-					
-								<span>{olho0}</span>
 
-								<a href="{base_url}single/show/{id0}" class="opener"></a>
-							</div>
-						</figure>
+			<!-- Barra do conteudo  -->
+			<div class="row fundo_branco" id='barra_conteudo'>
 
-						<figure>
 
-							<div style="height: 300px">
-								<h5 class="post-heading"><strong>{sub1}</strong></h5>
-								<a href="{base_url}single/show/{id1}"><img
-								src="{base_url}upload/{imagem1}" alt="{titulo1}" /> </a>
-			
-                                 <h4 class="post-heading">{titulo1}</h4>
-							
-								<span>{olho1}</span>
-								<a href="{base_url}single/show/{id1}" class="opener"></a>
-							</div>
 
-						</figure>
-						<figure class="last">
-							<div style="height: 300px">
-								<h5 class="post-heading"><strong>{sub2}</strong></h5>
-								<a href="{base_url}single/show/{id2}"><img
-								src="{base_url}upload/{imagem2}" alt="{titulo2}" /> </a>
-                                 <h4 class="post-heading">{titulo2}</h4>
-						
-								<span>{olho2}</span>
-							</div>
-						</figure>
-						
-						<figure>
-							<div style="height: 300px">
-							<h5 class="post-heading"><strong>{sub3}</strong></h5>
-								<a href="{base_url}single/show/{id3}"><img
-								src="{base_url}upload/{imagem3}" alt="{titulo3}" /> </a>
-                                 <h4 class="post-heading">{titulo3}</h4>
-							
-								<span>{olho3}</span>
-							</div>
+				<!-- coluna 1 -->
+				<div class="col-sm-4 col-md-3 col-lg-3  col-lg-offset-1" >	
+					<h4><span class="aspas">//</span>{sub0}</h4>
+					<a href='{base_url}single/show/{id0}' class="thumbnail"> <img src="{imagem0}" alt="{titulo0}" class='img-responsive'/></a>
+					<h6>{titulo0}</h6>
+					<p>{olho0}</p>				
+				</div>
 
-						</figure>
+				<div class="col-sm-4 col-md-3 col-lg-3  " >	
+					<h4><span class="aspas">//</span>{sub1}</h4>
+					<a href='{base_url}single/show/{id1}' class="thumbnail"> <img src="{imagem1}" alt="{titulo1}" class='img-responsive'/></a>
+					<h6>{titulo1}</h6>
+					<p>{olho1}</p>				
+				</div>
 
-						<figure>
-							<div style="height: 300px">
-							<h5 class="post-heading"><strong>{sub4}</strong></h5>
-								<a href="{base_url}single/show/{id4}"><img
-								src="{base_url}upload/{imagem4}" alt="{titulo4}" /> </a>
-                                 <h4 class="post-heading">{titulo4}</h4>
-								
-								<span>{olho4}</span>
-							</div>
-						</figure>
+				<div class="col-sm-4 col-md-3 col-lg-3  " >	
+					<h4><span class="aspas">//</span>{sub2}</h4>
+					<a href='{base_url}single/show/{id2}' class="thumbnail"> <img src="{imagem2}" alt="{titulo2}" class='img-responsive'/></a>
+					<h6>{titulo2}</h6>
+					<p>{olho2}</p>				
+				</div>
 
-						<figure class="last">
-
-							<div style="height: 300px">
-							<h5 class="post-heading"><strong>{sub5}</strong></h5>
-
-								<a href="{base_url}single/show/{id5}"><img
-								src="{base_url}upload/{imagem5}" alt="{titulo5}" /> </a>
-
-								
-                                <h4 class="post-heading">{titulo5}</h4>
-							
-								<span>{olho5}</span>
-
-							</div>
-						</figure>
-						
-						<!--  -->
-						<figure>
-							<div style="height: 300px">
-							<h5 class="post-heading"><strong>{sub6}</strong></h5>
-								<a href="{base_url}single/show/{id6}"><img
-								src="{base_url}upload/{imagem6}" alt="{titulo6}" /> </a>
-                                 <h4 class="post-heading">{titulo6}</h4>
-							
-								<span>{olho6}</span>
-							</div>
-
-						</figure>
-
-						<figure>
-							<div style="height: 300px">
-							<h5 class="post-heading"><strong>{sub7}</strong></h5>
-								<a href="{base_url}single/show/{id7}"><img
-								src="{base_url}upload/{imagem7}" alt="{titulo7}" /> </a>
-                                 <h4 class="post-heading">{titulo7}</h4>
-								
-								<span>{olho7}</span>
-							</div>
-						</figure>
-
-						<figure class="last">
-
-							<div style="height: 300px">
-							<h5 class="post-heading"><strong>{sub8}</strong></h5>
-
-								<a href="{base_url}single/show/{id8}"><img
-								src="{base_url}upload/{imagem8}" alt="{titulo8}" /> </a>
-
-								
-                                <h4 class="post-heading">{titulo8}</h4>
-							
-								<span>{olho8}</span>
-
-							</div>
-						</figure>
-						
-						<!--  -->
+				<!-- coluna 2 -->
+				<div class="col-sm-4 col-md-3 col-lg-3  hidden-sm hidden-xs " >
+					<h4  ><span class="aspas">//</span>Edição N° {edicao_numero} </h4>
+					<a href="{base_url}edicao/{edicao_numero}" class="opener">
+						<img src="{base_url}upload/capa/{edicao_capa}" alt="Capa {edicao_numero} abril Carta na Escola revista mensal"  class='img-responsive' />
+					</a> 
+					<div style='text-align: center;'>
+						<a href='{base_url}acervo' >Edições Anteriores</a>	| <a href='http://www.mercadoconfianca.com.br/cartacapital.asp?Site_txt=EDITORIAL&Origem_txt=CARTANAESCOLA&Formato_txt=CAPA' >Assine</a> 			
 					</div>
 				</div>
 
-			</div>
 
-			
-			
-
-			<!-- ENDS home-block -->
-	</div>
-		<footer>
-
-			<div class="wrapper">
-
-				<ul class="widget-cols clearfix">
-					<li class="first-col">
-						<?php
-                        include 'primeira_coluna.php';
-						?>
-					</li>
-
-					<li class="second-col">
-						<?php
-                        include 'segunda_coluna.php';
-						?>
-					</li>
-
-					<li class="third-col">
-						<?php
-                        include 'terceira_coluna.php';
-						?>
-					</li>
-
-					<li class="fourth-col">
-						<?php
-                        include 'quarta_coluna.php';
-						?>
-					</li>
-				</ul>
-
-				<?php
-                include 'footer_bottom.php';
-				?>
 
 			</div>
-		</footer>
+
+
+
+
+			<div class="row fundo_branco" id='barra_conteudo'>
+				
+				<div class="col-sm-4 col-md-6 col-lg-5 col-lg-offset-1" >	
+					<h4><span class="aspas">//</span>{sub3}</h4>
+					<a href='{base_url}single/show/{id3}' class="thumbnail"> <img src="{imagem3}" alt="{titulo3}" class='img-responsive'/></a>
+					<h6>{titulo3}</h6>
+					<p>{olho3}</p>				
+				</div>
+
+				<div class="col-sm-4 col-md-3 col-lg-3  " >	
+					<h4><span class="aspas">//</span>{sub4}</h4>
+					<a href='{base_url}single/show/{id4}' class="thumbnail"> <img src="{imagem4}" alt="{titulo4}" class='img-responsive'/></a>
+					<h6>{titulo4}</h6>
+					<p>{olho4}</p>				
+				</div>
+
+				<div class="col-sm-4 col-md-3 col-lg-3  " >	
+					<h4><span class="aspas">//</span>{sub5}</h4>
+					<a href='{base_url}single/show/{id2}' class="thumbnail"> <img src="{imagem5}" alt="{titulo5}" class='img-responsive'/></a>
+					<h6>{titulo5}</h6>
+					<p>{olho5}</p>				
+				</div>
+			</div>
+
+
+			<!-- Barra visivel em celulares e tablets de telas pequenas  -->
+			<div class="row fundo_branco visible-xs visible-sm ">
+				<div class="col-lg-10 col-lg-offset-1 fundo_branco">
+					<hr class='row-divider'>
+				</div>
+			</div>
+
+			<div class="row fundo_branco visible-xs visible-sm" id='barra_conteudo'>
+
+				<div class="col-sm-4 col-md-3 " >	
+					<h4 ><span class="aspas">//</span>Edição N° {edicao_numero} </h4>
+					<a href="{base_url}edicao/{edicao_numero}" class="opener">
+						<img src="{base_url}upload/capa/{edicao_capa}" alt="Capa {edicao_numero} abril Carta na Escola revista mensal"  class='img-responsive' />
+					</a> 
+					<div style='text-align: center;'>
+						<a href='{base_url}acervo' >Edições Anteriores</a>	
+					</div>		
+
+				</div>	
+
+				<div class="col-sm-8  col-md-9 " >	
+					<a href='http://www.mercadoconfianca.com.br/cartacapital.asp?Site_txt=EDITORIAL&Origem_txt=CARTANAESCOLA&Formato_txt=CAPA' class="btn btn-lg btn-warning btn-block botao_assine" target='opener' > Assine Carta Fundamental</a>
+				</div>
+			</div>
+			<!-- Barra visivel em celulares e tablets de telas pequenas  -->
+
 		
-			<?php
-                        include 'vitrine_rodape.php';
-			?>
-			
+		</div>
+		<!-- Barra do conteudo  -->
+
+
+		<!-- rodape -->
+		<?php include('rodape.php') ?>
+		<!-- rodape -->
+
+
+
+		<script src="//code.jquery.com/jquery.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$('.carousel').carousel();
+		</script>	
 
 	</body>
-
-</html>
+	</html>

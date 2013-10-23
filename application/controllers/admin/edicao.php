@@ -32,16 +32,16 @@ class Edicao extends CI_Controller {
 				array('js_url' =>  base_url().'js/bootstrap.js'),
 				 
 					
-				array('js_url' =>  base_url().'js2/ckeditor/ckeditor.js'),
-				array('js_url' =>  base_url().'js2/ckeditor/adapters/jquery.js'),
-				array('js_url' =>  base_url().'js2/util.js'),
+				array('js_url' =>  base_url().'js/ckeditor/ckeditor.js'),
+				array('js_url' =>  base_url().'js/ckeditor/adapters/jquery.js'),
+				array('js_url' =>  base_url().'js/util.js'),
 					
-				array('js_url' =>  base_url().'js2/lista_confirma_delete.js'),
+				array('js_url' =>  base_url().'js/lista_confirma_delete.js'),
 		);
 		$this->data['css']= array(
 				array('css_url' => base_url().'css/bootstrap.css'),
 				array('css_url' => 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css'),
-				array('css_url' => base_url().'css2/style.css'),
+				array('css_url' => base_url().'css/style.css'),
 					
 		);
 		$this->data['local'] = 	$this->uri->segment("2");
@@ -132,19 +132,42 @@ class Edicao extends CI_Controller {
 
 		/*		$this->pag_conf();
 		 $this->util->ShowADMTopPage($this->data); // carrega o topo do adm
-		$this->util->ShowADMMenu(0) ; // carrega o menu adm	 */
+		 $this->util->ShowADMMenu(0) ; // carrega o menu adm	 */
 
-		$id = $this->input->post('id');
-		$campos = $_POST;
+		 $idx = $this->input->post('edicao');
 
-		$this->Model_util->setTableData($this->tabela);
-		$this->Model_util->setID($id);
-		$this->Model_util->setData($campos);
-		$this->Model_util->save();
+		 $data = $this -> Model_util -> ByIDtoTemplate($this -> tabela, $idx, 'edicao' );
 
-		$this->paging();
+		// print_r (  $data  );
 
-		$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
+		 if ( $data['edicao'] == null ){
+
+		 	$id = $this->input->post('id');
+		 	$campos = $_POST;
+
+		 	$this->Model_util->setTableData($this->tabela);
+		 	$this->Model_util->setID($id);
+		 	$this->Model_util->setData($campos);
+		 	$this->Model_util->save();
+
+		 	$this->paging();
+
+			$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
+
+		 }else{ 
+
+
+			echo "<script>alert('Edição Já existe no banco')</script>";
+			
+		 	$this->paging();
+
+			$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
+
+			
+
+		}
+
+		
 	}
 
 	/*

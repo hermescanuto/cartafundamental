@@ -23,11 +23,11 @@ class Home extends CI_Controller {
 
 
 
-		if ( $deviceType == 'phone' ){
+		// if ( $deviceType == 'phone' ){
 
-			redirect('/mobile/home/', 'refresh');
+		// 	redirect('/mobile/home/', 'refresh');
 
-		}
+		// }
 			
 
 	}
@@ -47,16 +47,18 @@ class Home extends CI_Controller {
 		// busca as materias destaque da home
 		$r = $this -> Model_util -> showHome();
 
+
+
 		for ($i = 0; $i <= 2; $i++) {
 			$this -> data["desc$i"] = $r[$i]['descricao_home'] ;
 
 
 			if ( $r[$i]['imagem_home'] == null ){
 
-				$this -> data["imagem_home$i"] = "970x483.jpg";
+				$this -> data["imagem_home$i"] = "http://placehold.it/1134x600";
 			}else{
 
-				$this -> data["imagem_home$i"] = $r[$i]['imagem_home'];
+				$this -> data["imagem_home$i"] = base_url() . 'upload/' . $r[$i]['imagem_home'];
 			}
 
 
@@ -73,7 +75,7 @@ class Home extends CI_Controller {
 		$linha2 = $this -> Model_util -> showHome(3);
 		$linha3 = $this -> Model_util -> showHome(4);
 		
-	
+			
 		$recordset[0] =  $linha1[0] ;
 		$recordset[1] =  $linha1[1] ;
 		$recordset[2] =  $linha1[2] ;
@@ -101,27 +103,28 @@ class Home extends CI_Controller {
 				$this -> data["olho$i"] =  substr($recordset[$i]["descricao_home"]."",0 , 140 ) . "...";
 			}
 
-
+			
+			$this -> data["sub$i"] = $recordset[$i]["tipo_conteudo"];
 
 
 			if ( $recordset[$i]["imagem_fundo"] == null ){
 
-				$this -> data["imagem$i"] = "446x283.jpg";
+				$this -> data["imagem$i"] = "http://placehold.it/1134x600";
 
 			}else{
 
-				$this -> data["imagem$i"] = $recordset[$i]["imagem_fundo"];
+				$this -> data["imagem$i"] = "http://placehold.it/1134x600"; //base_url() .'upload/'.$recordset[$i]["imagem_fundo"];
 			}
 
 
-			if ( $recordset[$i]["sub_classificacao"].'' == ''   ){
+			// if ( $recordset[$i]["sub_classificacao"].'' == ''   ){
 
-				$this -> data["sub$i"] = $recordset[$i]["tipo_conteudo"];
+			// 	$this -> data["sub$i"] = $recordset[$i]["tipo_conteudo"];
 
-			}else{
+			// }else{
 
-				$this -> data["sub$i"] = $recordset[$i]["sub_classificacao"];
-			}
+			// 	$this -> data["sub$i"] = $recordset[$i]["sub_classificacao"];
+			// }
 
 
 		}

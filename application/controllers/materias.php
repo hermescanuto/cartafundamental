@@ -2,6 +2,8 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
+
+
 class Materias extends CI_Controller {
 
 	protected $data = array();

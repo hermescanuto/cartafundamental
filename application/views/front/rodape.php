@@ -1,12 +1,51 @@
+<div id='rodape'>
 
-<div class="row">
+	<div class="container">
 
-	<div class="span3">Coluna 1</div>
+		<div class="row">
 
-	<div class="span3">Coluna2</div>
+			<div class="col-lg-10 col-lg-offset-1 " >
 
-	<div class="span3">Coluna3</div>
+				<!-- coluna 1 -->
+				<div class="col-sm-4 col-md-3 col-lg-3 coluna">
+					<h6 class='titulos'><span class="aspas">//</span>NOSSOS PRODUTOS</h6>
+					<img src="{base_url}focus_data/logos.jpg" alt="logos" />
+				</div>
 
-	<div class="span3">Coluna4</div>
+				<!-- coluna 2 -->
+				<div class="col-sm-4 col-md-3 col-lg-3 coluna">
+					<h6 class='titulos'><span class="aspas">//</span>EDITORA CONFIANÇA</h6>
+					<p>	
+						<a href="#">//</a><br>
+						<a href="#">//</a><br>
+						<a href="#">//</a><br>
+						<a href="#">//</a><br>
+						<a href="#">//</a><br>
+					</p>
+				</div>
+
+				<!-- coluna 3 -->	
+				<div class="col-sm-4 col-md-3 col-lg-3 coluna">
+					<h6 class='titulos'><span class="aspas">//</span>ASSINATURA</h6>
+					<p>	
+						<a href="#">//</a><br>
+						<a href="#">//</a><br>
+					</p>
+				</div>
+
+				<!-- coluna 4 -->			
+				<div class="col-sm-4 col-md-3 col-lg-3 coluna">
+					<h6 class='titulos'><span class="aspas">//</span>ANUNCIE</h6>
+					<p>	
+						<a href="#">//</a><br>
+						<a href="#">//</a><br>
+
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
 
 </div>
