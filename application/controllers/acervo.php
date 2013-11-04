@@ -19,6 +19,12 @@ class acervo extends CI_Controller {
 	}
 
 	public function index() {
+
+		
+		$recordset = $this->Model_util->getCapa();
+
+		$this->data['edicao_capa'] = $recordset['imagem_capa'];
+		$this->data['edicao_numero'] = $recordset['edicao'];
 		
 		$this -> data["lista_acervo"] = $this->Model_util->lista_acervo();
 		

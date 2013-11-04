@@ -7,6 +7,7 @@
 	<title>Carta Fundamental | Titulo da Pagina"</title>	
 
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="{base_url}css/cartafundamental.css">
 
 	<!--fontes -->

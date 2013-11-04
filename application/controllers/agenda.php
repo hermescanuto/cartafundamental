@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class editorial extends CI_Controller {
+class agenda extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';
@@ -14,8 +14,8 @@ class editorial extends CI_Controller {
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
 		$this -> data['local'] = $this -> uri -> segment("2");
-		$this -> data['tipo_busca'] = 7;
-		$this -> data['lista_legenda'] = "Editorial";
+		$this -> data['tipo_busca'] = 9;
+		$this -> data['lista_legenda'] = "Agenda";
 
 	}
 
@@ -66,6 +66,7 @@ class editorial extends CI_Controller {
 		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4", $this -> data['tipo_busca'] );
 		// cria a paginação
 		$data = $result;
+
 
 			$recordset = $this->Model_util->getCapa();
 		$data['edicao_capa'] = $recordset['imagem_capa'];

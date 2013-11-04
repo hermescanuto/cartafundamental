@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class editorial extends CI_Controller {
+class entrevista extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';
@@ -14,14 +14,19 @@ class editorial extends CI_Controller {
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
 		$this -> data['local'] = $this -> uri -> segment("2");
-		$this -> data['tipo_busca'] = 7;
-		$this -> data['lista_legenda'] = "Editorial";
-
+		$this -> data['tipo_busca'] = 2;
+		$this -> data['lista_legenda'] = "Entrevista";
 	}
 
 	public function index() {
 		$this -> paging();
 		// paginacao
+	}
+	
+	public function monta($id){
+		
+		
+		
 	}
 
 	/*
@@ -32,6 +37,9 @@ class editorial extends CI_Controller {
 	*/
 
 	function paging() {
+
+
+		
 
 		// Cria a busca
 		$data['new_record'] = base_url() . $this -> data['local'] . '/novo';
@@ -63,16 +71,13 @@ class editorial extends CI_Controller {
 
 
 
-		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4", $this -> data['tipo_busca'] );
+		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4",$this -> data['tipo_busca']);
 		// cria a paginação
 		$data = $result;
 
-			$recordset = $this->Model_util->getCapa();
+		$recordset = $this->Model_util->getCapa();
 		$data['edicao_capa'] = $recordset['imagem_capa'];
 		$data['edicao_numero'] = $recordset['edicao'];
-
-		$data["alvo_materias"] ='active';
-		$data["alvo_temaaula"] ='active';
 
 		$data['base_url'] = base_url();
 		$data['local'] = $this -> data['local'];

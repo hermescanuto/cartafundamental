@@ -7,6 +7,7 @@
 	<title>Carta Fundamental | {titulo}"</title>	
 
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="{base_url}css/cartafundamental.css">
 
 	<!--fontes -->
@@ -59,7 +60,7 @@
 		<!-- Barra cinza -->
 		<div class="row barra_cinza">	
 			<div class="col-lg-10 col-lg-offset-1 barra_cinza" id='barra_cinza'>
-				<h4><span class="aspas">//</span>Miolo/h4>
+				<h4><span class="aspas">//</span>Contato</h4>
 			</div>
 		</div>
 		<!-- Barra cinza   -->
@@ -70,13 +71,56 @@
 			<!-- coluna 1 -->
 			<div class="col-lg-7 col-md-9 col-lg-offset-1 fundo_branco" id='coluna1'>	
 
+				<form class="form-horizontal" role='form' action="{base_url}contato/on" name="form1" id="form1" method="post"  >
 
-				<p>
-					 miolo
-				</p>
 
-			
+					<form class="form-horizontal" role="form">
 
+						<div class="form-group">
+							<label for="inputEmail1" class="col-lg-2 control-label">Nome:</label>
+							<div class="col-lg-7">
+								<input type="text" class="form-control" id="inputEmail1" placeholder="Digite seu nome" required="">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="inputEmail1" class="col-lg-2 control-label">Email:</label>
+							<div class="col-lg-7">
+								<input type="email" class="form-control" id="inputEmail1" placeholder="Digite seu e-mail" required="">
+							</div>
+						</div>
+
+
+						<!-- Select Basic -->
+						<div class="form-group">
+							<label class="control-label col-lg-2" for="area">Assunto:</label>
+
+							<div class="col-lg-7">
+								<select id="area" name="area">
+									<option>Redação</option>
+									<option>Comercial</option>
+								</select>
+							</div>
+
+						</div>
+
+
+						<div class="form-group">
+							<label for="inputPassword1" class="col-lg-2 control-label">Mensagem:</label>
+							<div class="col-lg-7">
+								<textarea class="form-control" rows="5" required=""></textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-lg-offset-2 col-lg-10">
+								<button type="submit" class="btn btn-default">Enviar</button>
+							</div>
+						</div>
+					</form>
+
+
+				</form>
 
 
 
@@ -87,14 +131,9 @@
 			</div>
 			<!-- coluna 2 -->
 			<div class="col-lg-3 col-md-3 fundo_branco" id='coluna2'>
-				<h4  ><span class="aspas">//</span>Edição do mês {edicao_numero} </h4>
-				<a href="{base_url}edicao/{edicao_numero}" class="opener">
-					<img src="{base_url}upload/capa/{edicao_capa}" alt="Capa {edicao_numero} abril Carta na Escola revista mensal" width="205" height="261"  />
-				</a> 
-
-				<h4><span class="aspas">//</span> Saiba Mais</h4>
-
-				<p>{texto_extra}</p>
+				<!-- Ultima edicao  -->
+				<?php include('ultima_edicao.php') ?>
+				<!-- Ultima edicao  -->
 			</div>
 
 

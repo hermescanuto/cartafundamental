@@ -20,6 +20,12 @@ class Tablet extends CI_Controller {
 
 	public function index() {
 
+		
+		$recordset = $this->Model_util->getCapa();
+
+		$this->data['edicao_capa'] = $recordset['imagem_capa'];
+		$this->data['edicao_numero'] = $recordset['edicao'];
+
 		$this->data["alvo_tablet"] ='current-menu-item';
 		$this -> parser -> parse('front/tablet', $this -> data);
 	}

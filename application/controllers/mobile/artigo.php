@@ -2,11 +2,11 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class entrevistas extends CI_Controller {
+class artigo extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';
-	protected $view = 'vw_conteudo_publicado';
+	protected $view = 'vw_conteudo';
 
 	function __construct() {
 		parent::__construct();
@@ -14,19 +14,13 @@ class entrevistas extends CI_Controller {
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
 		$this -> data['local'] = $this -> uri -> segment("2");
-		$this -> data['tipo_busca'] = 2;
-		$this -> data['lista_legenda'] = "Entrevistas";
+		$this -> data['tipo_busca'] = 5;
+		$this -> data['lista_legenda'] = "Artigo";
 	}
 
 	public function index() {
 		$this -> paging();
 		// paginacao
-	}
-	
-	public function monta($id){
-		
-		
-		
 	}
 
 	/*
@@ -49,7 +43,7 @@ class entrevistas extends CI_Controller {
 
 		$table = $this -> view;
 		$fields = "*";
-		$orderby = '';
+		$orderby = 'id desc';
 
 		$busca = $this -> uri -> segment("4");
 		if (is_numeric($busca)) {
@@ -61,20 +55,27 @@ class entrevistas extends CI_Controller {
 
 		if ($busca != null) {
 
-			$where = array($campo_busca => urldecode($busca) );
+			$where = array($campo_busca => urldecode($busca) , 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] );
 		} else {
-			$where = null;
+			$where = array( 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] );
 		}
 
 
 
-		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4",$this -> data['tipo_busca']);
+		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4");
 		// cria a paginação
 		$data = $result;
 
 		$data['base_url'] = base_url();
 		$data['local'] = $this -> data['local'];
 		$data['lista_legenda'] = $this -> data['lista_legenda'] ;
+		$data["alvo_materias"] ='active';
+		$data["alvo_temaaula"] ='active';
+
+		$recordset = $this->Model_util->getCapa();
+		$data['edicao_capa'] = $recordset['imagem_capa'];
+		$data['edicao_numero'] = $recordset['edicao'];
+
 		$this -> parser -> parse('front/lista', $data);
 		// Carrega o view de listagem de materia
 

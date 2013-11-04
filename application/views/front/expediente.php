@@ -7,6 +7,7 @@
 	<title>Carta Fundamental | {titulo}"</title>	
 
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="{base_url}css/cartafundamental.css">
 
 	<!--fontes -->
@@ -179,14 +180,9 @@
 			</div>
 			<!-- coluna 2 -->
 			<div class="col-lg-3 col-md-3 fundo_branco" id='coluna2'>
-				<h4  ><span class="aspas">//</span>Edição do mês {edicao_numero} </h4>
-				<a href="{base_url}edicao/{edicao_numero}" class="opener">
-					<img src="{base_url}upload/capa/{edicao_capa}" alt="Capa {edicao_numero} abril Carta na Escola revista mensal" width="205" height="261"  />
-				</a> 
-
-				<h4><span class="aspas">//</span> Saiba Mais</h4>
-
-				<p>{texto_extra}</p>
+				<!-- Ultima edicao  -->
+				<?php include('ultima_edicao.php') ?>
+				<!-- Ultima edicao  -->
 			</div>
 
 
@@ -204,7 +200,8 @@
 
 
 	<script src="//code.jquery.com/jquery.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>	
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="{base_url}/js/ajuste.js"></script>	
 
 </body>
 </html>

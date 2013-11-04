@@ -12,8 +12,8 @@
 
 	<!--fontes -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	
-	
+
+
 	<base href="{url}"/>
 	<link rel="image_src" href="{base_url}upload/{imagem_fundo}"/>
 	<meta name="description" content="{descricao}" />
@@ -26,11 +26,20 @@
 	<meta property="og:image:width" content="200"/>
 	<meta property="og:url"	content="{url}"/>
 
+	<style type="text/css">
+
+	.barra_cinza {
+		padding: 10px 30px;
+	}
+
+	</style>
+
 	<!-- Icones para favoritos -->
 	<?php include 'faveicon.php'; ?>
-	
+
 	<!-- Google Analitics -->
-   <?php include 'googleanalytics.php'; ?> </head>
+	<?php include 'googleanalytics.php'; ?> 
+</head>
 <body>
 
 	<!-- Barra da simples -->
@@ -47,22 +56,11 @@
 		<?php include('menu.php') ?>
 		<!-- menu  -->
 
-		<!-- Barra da imagem da materia  -->
-		<div class="row fundo_branco">	
-			<div class="col-lg-10 col-lg-offset-1 fundo_branco">
-				<img src="{base_url}upload/{imagem_fundo}" alt="{titulo}" class='img-responsive' >
-				<p class="legenda_foto">{legenda_foto}</p>
-			</div>
-		</div>
-		<!-- Barra da imagem da materia  -->
-
 
 		<!-- Barra cinza -->
 		<div class="row barra_cinza">	
 			<div class="col-lg-10 col-lg-offset-1 barra_cinza" id='barra_cinza'>
-				<h1><span class="aspas">//</span>{titulo}</h1>
-				<p>{descricao}</p>
-				<p>{credito_foto}</p>
+				<h4><span class="aspas">//</span>Sobre</h4>
 			</div>
 		</div>
 		<!-- Barra cinza   -->
@@ -73,46 +71,57 @@
 			<!-- coluna 1 -->
 			<div class="col-lg-7 col-md-9 col-lg-offset-1 fundo_branco" id='coluna1'>	
 
-				<h4><span class="aspas">//</span>Por {autor} — publicado na edição {edicao}, de {edicao_mes} de {ano} </h4>
+
+						
+				 <p>Facilita a vida do professor, favorecendo a atualização dos conteúdos educativos para o corpo docente.</p>
+					<p>O objetivo é reunir temas e reflexões para enriquecer as aulas dos professores dos anos fundamentais à vida de qualquer estudante, sendo um veículo de transformação e melhora da qualidade da educação.</p>
+					<p>A revista tem o conteúdo próprio, sendo 60% direcionados a temas de aulas que seguem orientações do MEC para complementar o material didático, trazendo uma nova forma de ensinar e se atualizar.</p>
+					<p>Circulação: 185.428 exemplares/mês<br>
+					  <br>
+					  <br>
+					  <br>
+					  <br>
+					  <br>
+					  <br>
+					  <br>
+					  <br>
+					  <br>
+					  <br>
+					</p>
+						
 				
-				<p>{texto}<p>
+						
 
-					<br>	
 
-					<button type="button" class="btn btn-default"><a href="http://www.mercadoconfianca.com.br/" target='_blank'>Assine Carta Fundamental</a></button>
-					<br>
 
-					<hr class='row-divider'>
 
-				</div>
-				<!-- coluna 2 -->
-				<div class="col-lg-3 col-md-3 fundo_branco" id='coluna2'>
-					<h4  ><span class="aspas">//</span>Edição do mês {edicao_numero} </h4>
-					<a href="{base_url}edicao/{edicao_numero}" class="opener">
-						<img src="{base_url}upload/capa/{edicao_capa}" alt="Capa {edicao_numero} abril Carta na Escola revista mensal" width="205" height="261"  />
-					</a> 
-
-					<h4><span class="aspas">//</span> Saiba Mais</h4>
-
-					<p>{texto_extra}</p>
-				</div>
-
+				<hr class='row-divider'>
 
 			</div>
-			<!-- Barra do conteudo  -->
-
+			<!-- coluna 2 -->
+			<div class="col-lg-3 col-md-3 fundo_branco" id='coluna2'>
+				<!-- Ultima edicao  -->
+				<?php include('ultima_edicao.php') ?>
+				<!-- Ultima edicao  -->
+			</div>
 
 
 		</div>
+		<!-- Barra do conteudo  -->
 
-		<!-- rodape -->
-		<?php include('rodape.php') ?>
-		<!-- rodape -->
 
-	
+
+	</div>
+
+	<!-- rodape -->
+	<?php include('rodape.php') ?>
+	<!-- rodape -->
+
+
 
 	<script src="//code.jquery.com/jquery.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>	
-		
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="{base_url}/js/ajuste.js"></script>	
+
 </body>
 </html>

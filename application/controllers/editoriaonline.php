@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class editorial extends CI_Controller {
+class editoriaonline extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';
@@ -14,8 +14,8 @@ class editorial extends CI_Controller {
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
 		$this -> data['local'] = $this -> uri -> segment("2");
-		$this -> data['tipo_busca'] = 7;
-		$this -> data['lista_legenda'] = "Editorial";
+		$this -> data['tipo_busca'] = 10;
+		$this -> data['lista_legenda'] = "Editoria online";
 
 	}
 
@@ -67,7 +67,7 @@ class editorial extends CI_Controller {
 		// cria a paginação
 		$data = $result;
 
-			$recordset = $this->Model_util->getCapa();
+		$recordset = $this->Model_util->getCapa();
 		$data['edicao_capa'] = $recordset['imagem_capa'];
 		$data['edicao_numero'] = $recordset['edicao'];
 
