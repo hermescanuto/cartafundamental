@@ -51,7 +51,7 @@
 		<div class="row fundo_branco">	
 			<div class="col-lg-10 col-lg-offset-1 fundo_branco">
 				<img src="{base_url}upload/{imagem_fundo}" alt="{titulo}" class='img-responsive' >
-				<p class="legenda_foto">{legenda_foto}</p>
+				<p class="legenda_foto">{legenda_foto} -  Foto:{credito_foto} </p>
 			</div>
 		</div>
 		<!-- Barra da imagem da materia  -->
@@ -62,7 +62,6 @@
 			<div class="col-lg-10 col-lg-offset-1 barra_cinza" id='barra_cinza'>
 				<h1><span class="aspas">//</span>{titulo}</h1>
 				<p>{descricao}</p>
-				<p>{credito_foto}</p>
 			</div>
 		</div>
 		<!-- Barra cinza   -->

@@ -46,21 +46,33 @@
 	}
 
 
-  @media (min-width: 768px ){
-	
-	.botao_assine{
-		margin-top: 30%;
-	}
-  }
+	@media (min-width: 768px ){
 
-   @media (max-width: 767px){
-	
-	.botao_assine{
-		margin-top: 10px;
-		margin-bottom: 10px;
-
+		.botao_assine{
+			margin-top: 30%;
+		}
 	}
-  }
+
+	@media (max-width: 767px){
+
+		.botao_assine{
+			margin-top: 10px;
+			margin-bottom: 10px;
+
+		}
+	}
+
+
+	.carousel-caption {
+		position: inherit;
+		color: #000000; /*#FFFFFF;*/
+		/*background: black;
+		filter: alpha(opacity=50);
+		opacity: 0.5;*/
+		font-family: 'Open Sans', sans-serif;
+		font-size: 14px;
+		text-shadow: none;
+	}
 
 	</style>
 

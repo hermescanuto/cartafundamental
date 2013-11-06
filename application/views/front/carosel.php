@@ -1,11 +1,11 @@
 <div id="myCarousel" class="carousel slide">
 
 	<!-- Indicators -->
-	<ol class="carousel-indicators">
+	<!-- <ol class="carousel-indicators">
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		<li data-target="#myCarousel" data-slide-to="1"></li>
 		<li data-target="#myCarousel" data-slide-to="2"></li>
-	</ol>
+	</ol> -->
 
 	<div class="carousel-inner">
 
@@ -20,7 +20,7 @@
 		</div>
 
 		<div class="item">
-			<a href="{base_url}single/show/{destaque_id1}"><img src="{imagem_home0}" alt="{titulo1}"></a>
+			<a href="{base_url}single/show/{destaque_id1}"><img src="{imagem_home1}" alt="{titulo1}"></a>
 			<div class="container">
 				<div class="carousel-caption">
 					{titulo_destaque1}<br>
@@ -30,7 +30,7 @@
 		</div>
 
 		<div class="item">
-			<a href="{base_url}single/show/{destaque_id2}"><img src="{imagem_home0}" alt="{titulo2}"></a>
+			<a href="{base_url}single/show/{destaque_id2}"><img src="{imagem_home2}" alt="{titulo2}"></a>
 			<div class="container">
 				<div class="carousel-caption">
 					{titulo_destaque2}<br>

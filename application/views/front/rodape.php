@@ -31,8 +31,8 @@
 				<div class="col-sm-4 col-md-3 col-lg-3 coluna">
 					<h6 class='titulos'><span class="aspas">//</span>ASSINATURA</h6>
 					<p>	
-						<a href="#">//</a><br>
-						<a href="#">//</a><br>
+						<a href="http://mercadocapital.com.br/">// Assine</a><br>
+						<a href="http://www.assinantecartacapital.com.br/">//  Central de Atendimento</a><br>
 					</p>
 				</div>
 
@@ -40,9 +40,8 @@
 				<div class="col-sm-4 col-md-3 col-lg-3 coluna">
 					<h6 class='titulos'><span class="aspas">//</span>ANUNCIE</h6>
 					<p>	
-						<a href="#">//</a><br>
-						<a href="#">//</a><br>
-
+						<a href="http://www.cartacapital.com.br/anuncie/equipe-comercial">// Equipe Comercial</a><br>
+						<a href="http://www.cartacapital.com.br/anuncie/media-kit">// Mídia Kit</a><br>
 					</p>
 				</div>
 

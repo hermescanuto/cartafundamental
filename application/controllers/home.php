@@ -113,7 +113,7 @@ class Home extends CI_Controller {
 
 			}else{
 
-				$this -> data["imagem$i"] = "http://placehold.it/1134x600"; //base_url() .'upload/'.$recordset[$i]["imagem_fundo"];
+				$this -> data["imagem$i"] = base_url() .'upload/'.$recordset[$i]["imagem_fundo"];
 			}
 
 

@@ -76,6 +76,14 @@ class Materias extends CI_Controller {
 		$data['base_url'] = base_url();
 		$data['local'] = $this -> data['local'];
 		$data['lista_legenda'] = $this -> data['lista_legenda'] ;
+
+
+		$recordset = $this->Model_util->getCapa();
+		$data['edicao_capa'] = $recordset['imagem_capa'];
+		$data['edicao_numero'] = $recordset['edicao'];
+
+
+
 		$this -> parser -> parse('front/lista', $data);
 		// Carrega o view de listagem de materia
 

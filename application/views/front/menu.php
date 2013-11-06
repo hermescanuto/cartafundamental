@@ -77,8 +77,8 @@
           <!--   visivel em barra de navegacao -->
           <li style='margin-top: 18px;margin-left: 5px;' class='hidden-xs hidden-sm'>
             <form class="form-inline" role="form">
-              <input type="text" class="form-control" id="busca" required='' x-webkit-speech >
-              <button class="btn btn-default btn-xs" type="submit"><i class="fa fa-search"></i>  BUSCAR</button>
+              <input type="text" class="form-control" id="busca" required='' >
+              <button type="button" class="btn btn-default btn-xs" id='bt_busca_simples' ><i class="fa fa-search"></i>  BUSCAR</button>
             </form>                
           </li>
 
@@ -161,10 +161,10 @@
         <form role="form" >
           <div class="form-group"><label for="exampleInputEmail1"></label>
               <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-search"></i></span><input type="texto" class="form-control" id="busca" placeholder="Digite sua busca" required=''  x-webkit-speech >
+            <span class="input-group-addon"><i class="fa fa-search"></i></span><input type="texto" class="form-control" id="buscaModal" placeholder="Digite sua busca" required=''  x-webkit-speech >
           </div>
           </div>
-          <button type="submit" class="btn btn-default">Buscar</button>
+          <button type="button" class="btn btn-default" id='bt_buscar' >Buscar</button>
         </form>
 
 
