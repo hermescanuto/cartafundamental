@@ -24,42 +24,42 @@
           <li class="active dropdown hidden-xs">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" >MATÉRIAS <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="{base_url}entrevista">Entrevista</a></li>
-              <li><a href="{base_url}temadeaula">Tema de Aula</a></li>
+              <li><a href="{base_url}entrevista">Entrevistas</a></li>
+              <li><a href="{base_url}temadeaula">Temas de Aula</a></li>
               <li><a href="{base_url}colunistas">Colunistas</a></li>    
-              <li><a href="{base_url}artigo">Artigo</a></li>    
+              <li><a href="{base_url}artigo">Artigos</a></li>    
               <li><a href="{base_url}cultura">Cultura</a></li>  
-              <li><a href="{base_url}editorial">Editorial</a></li>  
-              <li><a href="{base_url}reportagem">Reportagem</a></li> 
-              <li><a href="{base_url}agenda">Agenda</a></li> 
-              <li><a href="{base_url}editoriaonline">Editoria Online</a></li>         
+              <!-- <li><a href="{base_url}editorial">Editorial</a></li>   -->
+              <li><a href="{base_url}reportagem">Reportagens</a></li> 
+          <!--     <li><a href="{base_url}agenda">Agenda</a></li> 
+              <li><a href="{base_url}editoriaonline">Editoria Online</a></li>    -->      
             </ul>
           </li>
 
           <!-- visivel em celulares e telas pequenas -->
-          <li class='visible-xs' ><a href="{base_url}entrevista">Entrevista</a></li>
-          <li class='visible-xs' ><a href="{base_url}temadeaula">Tema de Aula</a></li>
+          <li class='visible-xs' ><a href="{base_url}entrevista">Entrevistas</a></li>
+          <li class='visible-xs' ><a href="{base_url}temadeaula">Temas de Aula</a></li>
           <li class='visible-xs' ><a href="{base_url}colunistas">Colunistas</a></li> 
-          <li class='visible-xs' ><a href="{base_url}artigo">Artigo</a></li> 
+          <li class='visible-xs' ><a href="{base_url}artigo">Artigos</a></li> 
           <li class='visible-xs' ><a href="{base_url}cultura">Cultura</a></li>  
-          <li class='visible-xs' ><a href="{base_url}editorial">Editorial</a></li>  
-          <li class='visible-xs' ><a href="{base_url}reportagem">Reportagem</a></li>  
-          <li class='visible-xs' ><a href="{base_url}agenda">Agenda</a></li>
-          <li class='visible-xs' ><a href="{base_url}editoriaonline">Editoria Online</a></li>            
+      <!--     <li class='visible-xs' ><a href="{base_url}editorial">Editorial</a></li>   -->
+          <li class='visible-xs' ><a href="{base_url}reportagem">Reportagens</a></li>  
+         <!--  <li class='visible-xs' ><a href="{base_url}agenda">Agenda</a></li> -->
+        <!--   <li class='visible-xs' ><a href="{base_url}editoriaonline">Editoria Online</a></li>        -->     
   
         
           <li class="dropdown hidden-xs" >
             <a href="http://www.mercadocapital.com.br/" target='assine' class="dropdown-toggle collapse" data-toggle="dropdown">ASSINANTE<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="{base_url}tablet">Tablet</a></li>
-              <li><a href="{base_url}login/cadastrase">Cadastra-se</a></li>
-              <li><a href="http://www.mercadocapital.com.br/" target='assine' >Asssinante</a></li>
+              <li><a href="{base_url}login/cadastrase">Cadastre-se</a></li>
+              <li><a href="http://www.mercadocapital.com.br/" target='assine' >Assinante</a></li>
             </ul>
           </li>
 
           <li class='visible-xs' ><a href="http://www.mercadocapital.com.br/" target='assine' >Assinante</a</li>
           <li class='visible-xs' ><a href="{base_url}tablet">Tablet</a></li>
-          <li class='visible-xs' ><a href="{base_url}login/cadastrase">Cadastra-se</a></li>             
+          <li class='visible-xs' ><a href="{base_url}login/cadastrase">Cadastre-se</a></li>             
 
 
           <li class="dropdown hidden-xs">
@@ -75,30 +75,30 @@
           <li class='visible-xs' ><a href="{base_url}expediente">Expediente</a></li>   
 
           <!--   visivel em barra de navegacao -->
-          <li style='margin-top: 18px;margin-left: 5px;' class='hidden-xs hidden-sm'>
+<!--           <li style='margin-top: 18px;margin-left: 5px;' class='hidden-xs hidden-sm'>
             <form class="form-inline" role="form">
-              <input type="text" class="form-control" id="busca" required='' >
+              <input type="text" class="form-control" id="busca" required='' style='font-size: 8px; font-family: arial;'>
               <button type="button" class="btn btn-default btn-xs" id='bt_busca_simples' ><i class="fa fa-search"></i>  BUSCAR</button>
             </form>                
-          </li>
+          </li> -->
 
           <!--   visivel em barra de navegacao -->
-          <li style='margin-top: 18px;margin-left: 10px;' class='hidden-xs hidden-sm'>
+<!--           <li style='margin-top: 18px;margin-left: 10px;' class='hidden-xs hidden-sm'>
 
             <form class="form-inline" role="form" role="form" action="{base_url}login/on" name="form0" id="form0" method="post" target="acervo_lista" >
             
-              <input type="text" class="form-control" id="nome" name='nome' placeholder="login" required='' value='mmoreira@contentstuff.com' >
+              <input type="text" class="form-control" id="nome" name='nome' placeholder="login" required='' value='mmoreira@contentstuff.com' style='font-size: 8px; font-family: arial;'>
 
-             <input type="password" class="form-control" id="senha" name='senha' placeholder="senha" required='' value='CScap2013' >
+             <input type="password" class="form-control" id="senha" name='senha' placeholder="senha" required='' value='CScap2013' style='font-size: 8px; font-family: arial;'>
 
               <button class="btn btn-default btn-xs" type="submit"><i class="fa fa-unlock-o"></i> LOGAR</button>    
                 
             </form>                
-          </li>
+          </li> -->
 
          <!-- visivel em celulares e telas pequenas -->
-          <li class='visible-xs visible-sm' ><a data-toggle="modal" href="#myModalBusca" ><i class="fa fa-search"></i> BUSCAR</a></li>
-          <li class='visible-xs visible-sm' ><a data-toggle="modal" href="#myModalLogar" ><i class="fa fa-unlock-o"></i> LOGAR</a></li>
+          <li  ><a data-toggle="modal" href="#myModalBusca" ><i class="fa fa-search"></i> BUSCAR</a></li><!-- class='visible-xs visible-sm' -->
+          <li  ><a data-toggle="modal" href="#myModalLogar" ><i class="fa fa-unlock-o"></i> EDIÇÃO DIGITAL</a></li><!-- class='visible-xs visible-sm' -->
 
         </ul>
 
@@ -116,7 +116,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Logar</h4>
+        <h4 class="modal-title">Edição Digital</h4>
       </div>
       <div class="modal-body">
 

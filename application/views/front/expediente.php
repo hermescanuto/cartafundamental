@@ -85,16 +85,17 @@
 
 
 				<p> <strong>Consultora pedagógica:</strong> Maria José Nóbrega<br>
-					<strong>Editora-assistente:</strong> Clarice Cardoso<br>
+					<strong>Editora-assistente:</strong> Rafael Gregorioo<br>
 					<strong>Repórter: </strong>Tory Oliveira<br>
 					<strong>Estagiária: </strong>Thais Paiva<br>
 					<strong>Revisores:</strong> Áli Onaissi (coordenação), Hassan Ayoub e Rita     Leite
 				</p>
 
 
-				<p><strong>Projeto gráfico: </strong>Equipe CartaCapital<strong><br>
-					Diretora de arte:</strong> Pilar Velloso <br>
-					<strong>Chefe de arte: </strong>Estella Maris, George B. J. Duque Estrada     (Fundador) Mariana Ochs (Projeto original)<br>
+				<p><strong>Projeto editorial:</strong> Ricardo Prado<br>
+                    <strong>Projeto gráfico:</strong> Pilar Velloso <br>  <br> 
+					<strong>Diretora de arte:</strong> Pilar Velloso <br>
+					<strong>Chefe de arte: </strong>Estella Maris, George B. J. Duque Estrada     (Fundador)<br>
 					<strong>Designers:</strong> Ana Beatriz Pádua (Infográficos), Cláudia Kievel, Milena Branco, e     Marcos Medeiros (Assistente)<br>
 					<strong>Produção gráfica/digital:</strong> Reinaldo Belintani                  <br>
 					<strong>Fotografia:</strong> Mara Lúcia da Silva (Chefe de Produção), Gabriela     Giordano (Produtora Editorial) e Pedro Presotto (auxiliar de     Fotografia) <br>

@@ -169,7 +169,7 @@
 
 				<div class="col-sm-4 col-md-3 col-lg-3  " >	
 					<h4><span class="aspas">//</span>{sub5}</h4>
-					<a href='{base_url}single/show/{id2}' class="thumbnail"> <img src="{imagem5}" alt="{titulo5}" class='img-responsive'/></a>
+					<a href='{base_url}single/show/{id5}' class="thumbnail"> <img src="{imagem5}" alt="{titulo5}" class='img-responsive'/></a>
 					<h6>{titulo5}</h6>
 					<p>{olho5}</p>				
 				</div>

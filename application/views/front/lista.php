@@ -73,7 +73,7 @@
 
 
  		    {recordset}
-			<div class="row clearfix" style='margin-top:10px; margin-bottom:10px'>
+			<div class="row clearfix" style='margin-top:10px; margin-bottom:17px'>
 
 				<div class="col-sm-2 col-md-2 col-lg-2 ">
 										
@@ -82,10 +82,9 @@
 
 				<div class="col-sm-10  col-md-10 col-lg-10">
 					<span style="font-size: 12px">Edição: {edicao} </span>										
-					<h4>{titulo}</h4>
-                    <br>
-					{descricao} 
-					<a href="{base_url}single/show/{id}"> leia mais...</a>
+					<a href="{base_url}single/show/{id}"><h4 style='margin-bottom: 2px;'>{titulo}</h4></a>
+                   	<span style='margin-bottom: 10px;'>{descricao} <span>
+					 
 				</div>	
 
 

@@ -12,6 +12,10 @@
 
 	<!--fontes -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+	<link href='http://fonts.googleapis.com/css?family=Raleway+Dots' rel='stylesheet' type='text/css'>
+
+
 	
 	
 	<base href="{url}"/>
@@ -60,8 +64,8 @@
 		<!-- Barra cinza -->
 		<div class="row barra_cinza">	
 			<div class="col-lg-10 col-lg-offset-1 barra_cinza" id='barra_cinza'>
-				<h1><span class="aspas">//</span>{titulo}</h1>
-				<p>{descricao}</p>
+				<h2 style="font-family: 'Raleway Dots', cursive; font-weight: bolder;" ><span class="aspas">//</span>{titulo}</h2>
+				<span style="font-family: verdana">{descricao}</span>
 			</div>
 		</div>
 		<!-- Barra cinza   -->
@@ -72,11 +76,14 @@
 			<!-- coluna 1 -->
 			<div class="col-lg-7 col-md-9 col-lg-offset-1 fundo_branco" id='coluna1'>	
 
-				<h4><span class="aspas">//</span>Por {autor} — publicado na edição {edicao}, de {edicao_mes} de {ano} </h4>
+				<h5 style=" font-family: verdana;  font-size: 13px;"><span class="aspas">//</span>Por {autor} </h5>
 				
 				<p>{texto}<p>
 
-					<br>	
+					
+					<i>Publicado na edição {edicao}, de {edicao_mes} de {ano} </i>
+
+					<br><br><br>
 
 					<button type="button" class="btn btn-default"><a href="http://www.mercadoconfianca.com.br/" target='_blank'>Assine Carta Fundamental</a></button>
 					<br>
@@ -86,14 +93,17 @@
 				</div>
 				<!-- coluna 2 -->
 				<div class="col-lg-3 col-md-3 fundo_branco" id='coluna2'>
-					<h4  ><span class="aspas">//</span>Edição do mês {edicao_numero} </h4>
+					<h4  ><span class="aspas">//</span>Edição {edicao_numero} </h4>
 					<a href="{base_url}edicao/{edicao_numero}" class="opener">
 						<img src="{base_url}upload/capa/{edicao_capa}" alt="Capa {edicao_numero} abril Carta na Escola revista mensal" width="205" height="261"  />
 					</a> 
 
-					<h4><span class="aspas">//</span> Saiba Mais</h4>
-
-					<p>{texto_extra}</p>
+					<!-- <h4><span class="aspas">//</span> Saiba Mais</h4> -->
+					<br>
+					<br>
+					<span style='font-size: 11px;'>Envie comentário, sugestão ou crítica<br> para
+						<a href="mailto:fundamental@cartacapital.com.br">fundamental@cartacapital.com.br</a>
+					<span>
 				</div>
 
 
@@ -115,3 +125,16 @@
 		
 </body>
 </html>
+
+
+
+
+Saiba mais
+
+CANDIDO, Antonio. Estudo Analítico do Poema. SP: FFLCH/USP, 1987.
+GEBARA, Ana Elvira. A Poesia na Escola: Leitura e análise de poesia para crianças. SP: Cortez, 3ªed., 2012.
+ GOLDSTEIN, Norma. Versos, Sons, Ritmos. SP: Ática, 2008.
+FERRAZ, Eucanaã  et al. Vinicius de Moraes. Caderninho de Leituras.  SP: Cia. das Letras.
+
+Envie comentários, sugestões ou críticas para
+fundamental@cartacapital.com.br
