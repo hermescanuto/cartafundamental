@@ -33,6 +33,10 @@ class Single extends CI_Controller {
 		$data["mes"] = date('m', strtotime($data["data_criacao"]));
 		$data["ano"] = date('Y', strtotime($data["data_criacao"]));
 
+		$data['edicao_mes'] = strtolower( $this->util->mostrames( $data["mes"] ));
+
+
+
 		if ($data["imagem_home"] == null ) {
 			$data["imagem_home"] = "970x483.jpg";
 		}
@@ -42,7 +46,7 @@ class Single extends CI_Controller {
 			$data["pdf_free"] =  "<a href='" .  $this -> data['base_url']. "upload/pdf_free/" . $data["pdf_free"]."' >Click para fazer o download do pdf</a>";;
 		}
 
-		$data['edicao_mes'] = strtolower($this->util->mostrames( $data['edicao_mes'] ));
+		
 
 
 		$data["texto_extra"] = nl2br($data["texto_extra"]);
@@ -61,10 +65,13 @@ class Single extends CI_Controller {
 
 		// busca a capa
 
-		$recordset = $this->Model_util->getCapa(58);
-
+		$recordset = $this->Model_util->getCapa();
 		$this->data['edicao_capa'] = $recordset['imagem_capa'];
 		$this->data['edicao_numero'] = $recordset['edicao'];
+
+		
+
+		
 		
 		$this -> parser -> parse('front/single', $this -> data + $data);
 	}

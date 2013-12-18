@@ -24,7 +24,7 @@ class Model_util extends MY_Model {
         $r = $this -> db -> get_where('tb_home', array('id' => $id));
         $r = $r -> result_array();
         
-      
+
 
         $campo = array('id' => $r[0]['id1'], 'id' => $r[0]['id2'], 'id' => $r[0]['id3']);
         
@@ -85,12 +85,33 @@ class Model_util extends MY_Model {
      */
 
     function ExecSql($table, $fields, $where = '', $page_size = 10, $start = 0, $orderby = '' , $tipo_conteudo = '' ) {
+
+        #
         // para vericar quanto registro tem no banco
         $this -> db -> select($fields);
+
+        $where2 = $where ;
+
         //$this->db->where($where);
         if ($where != '') {
             //;$this->db->where($where);
-            $this -> db ->where($where);
+
+
+            if ( is_numeric($where)  )  {
+                $this -> db ->where($where);
+
+            }  else {
+              
+                   
+               
+                  $this -> db ->like($where);
+                 // $this -> db ->like( 'autor' , $where2) ; 
+            }
+
+            
+
+
+
         }
         
         if( $tipo_conteudo != ''){
@@ -110,10 +131,21 @@ class Model_util extends MY_Model {
         // para vericar quanto registro tem no banco com limite de paginacao
         $this -> db -> select($fields);
         if ($where != '') {
-            $this -> db -> where($where);
+
+         if ( is_numeric($where)  )  {
+                $this -> db ->where($where);
+
+            }  else {
+                
+               
+                $this -> db ->like($where);
+               // $this->db->like( 'autor' , $where2 )  ; 
+            }
+
+
         }
         
-     
+
 
         if ($orderby != '') {
             $this -> db -> order_by($orderby);
@@ -213,22 +245,22 @@ class Model_util extends MY_Model {
     	$this -> db -> select($fields);
 
     	$query = $this -> db -> get_where($tabela, array("visivel" => 1, "publicar" => 1, "imagem_fundo !=" => "","tb_tipo_conteudo_id !=" => 11 ) );
-    
+
     	$x = $query -> result_array();
-    
+
     	if ($selected == NULL) {
     		$data[] = array('valor' => -1, 'legenda' => 'Escolha:', 'selected' => 'selected="yes"');
     	}
-    
+
     	foreach ($x as $item) {
     		if ($item['id'] == $selected) {
     			$slc = 'selected="yes"';
     		} else {
     			$slc = '';
     		}
-    
+
     		$data[] = array('valor' => $item['id'], 'legenda' => $item['descricao'], 'selected' => $slc);
-    
+
     	}
     	return $data;
     }
@@ -258,7 +290,7 @@ class Model_util extends MY_Model {
         
         $this -> db -> order_by("title", "RANDOM");
         $this -> db -> limit(6);
-       
+
         $query = $this -> db -> get_where('vw_conteudo', array("visivel" => 1, "publicar" => 1, "imagem_fundo !=" => "","tb_tipo_conteudo_id !=" => 11 ));
         $recorset = $query -> result_array();
         return $recorset;
@@ -299,19 +331,19 @@ class Model_util extends MY_Model {
 
         if ($query->num_rows() > 0)
         {
-        	 $recordset = $query -> result_array();
-        	 return $recordset[0];
-        }else{
-        	
-        	return array('imagem_capa' => 'capa_nula.gif', 'edicao' => 0);
-        }
+          $recordset = $query -> result_array();
+          return $recordset[0];
+      }else{
 
-        
-        
+       return array('imagem_capa' => 'capa_nula.gif', 'edicao' => 0);
+   }
 
-        
 
-    }
+
+
+
+
+}
 
     /**
      * @author hermes
@@ -360,10 +392,11 @@ class Model_util extends MY_Model {
     
     function lista_acervo(){
     	
-    	$this->db->where('edicao >=', 69 ) ;
-    	$query = $this -> db -> get('vw_edicao');
-    	$recorset = $query -> result_array();
-    	return  $recorset;
-    	 
+    	$this->db->where('edicao >=',0 ) ;
+        $this -> db -> order_by("edicao",'desc');
+        $query = $this -> db -> get('vw_edicao');
+        $recorset = $query -> result_array();
+        return  $recorset;
+
     }
 }

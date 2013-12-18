@@ -74,6 +74,16 @@
 		text-shadow: none;
 	}
 
+	a {
+	color: #130702;
+	text-decoration: none;
+	}
+
+	a:hover {
+	color: #130702;
+	
+	}
+
 	</style>
 
 
@@ -83,6 +93,8 @@
 	<body>
 
 		<!-- Barra da simples -->
+
+		<?php include 'barra_simples.php'; ?> 
 
 		<!-- Barra da simples  -->
 
@@ -119,21 +131,21 @@
 				<div class="col-sm-4 col-md-3 col-lg-3  col-lg-offset-1" >	
 					<h4><span class="aspas">//</span>{sub0}</h4>
 					<a href='{base_url}single/show/{id0}' class="thumbnail"> <img src="{imagem0}" alt="{titulo0}" class='img-responsive'/></a>
-					<h6>{titulo0}</h6>
+					<h6 style='font-weight: bold;'>{titulo0}</h6>
 					<p>{olho0}</p>				
 				</div>
 
 				<div class="col-sm-4 col-md-3 col-lg-3  " >	
 					<h4><span class="aspas">//</span>{sub1}</h4>
 					<a href='{base_url}single/show/{id1}' class="thumbnail"> <img src="{imagem1}" alt="{titulo1}" class='img-responsive'/></a>
-					<h6>{titulo1}</h6>
+					<h6 style='font-weight: bold;'>{titulo1}</h6>
 					<p>{olho1}</p>				
 				</div>
 
 				<div class="col-sm-4 col-md-3 col-lg-3  " >	
 					<h4><span class="aspas">//</span>{sub2}</h4>
 					<a href='{base_url}single/show/{id2}' class="thumbnail"> <img src="{imagem2}" alt="{titulo2}" class='img-responsive'/></a>
-					<h6>{titulo2}</h6>
+					<h6 style='font-weight: bold;'>{titulo2}</h6>
 					<p>{olho2}</p>				
 				</div>
 
@@ -156,21 +168,21 @@
 				<div class="col-sm-4 col-md-6 col-lg-5 col-lg-offset-1" >	
 					<h4><span class="aspas">//</span>{sub3}</h4>
 					<a href='{base_url}single/show/{id3}' class="thumbnail"> <img src="{imagem3}" alt="{titulo3}" class='img-responsive'/></a>
-					<h6>{titulo3}</h6>
+					<h6 style='font-weight: bold;'>{titulo3}</h6>
 					<p>{olho3}</p>				
 				</div>
 
 				<div class="col-sm-4 col-md-3 col-lg-3  " >	
 					<h4><span class="aspas">//</span>{sub4}</h4>
 					<a href='{base_url}single/show/{id4}' class="thumbnail"> <img src="{imagem4}" alt="{titulo4}" class='img-responsive'/></a>
-					<h6>{titulo4}</h6>
+					<h6 style='font-weight: bold;'>{titulo4}</h6>
 					<p>{olho4}</p>				
 				</div>
 
 				<div class="col-sm-4 col-md-3 col-lg-3  " >	
 					<h4><span class="aspas">//</span>{sub5}</h4>
 					<a href='{base_url}single/show/{id5}' class="thumbnail"> <img src="{imagem5}" alt="{titulo5}" class='img-responsive'/></a>
-					<h6>{titulo5}</h6>
+					<h6 style='font-weight: bold;'>{titulo5}</h6>
 					<p>{olho5}</p>				
 				</div>
 			</div>

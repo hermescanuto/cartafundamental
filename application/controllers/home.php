@@ -103,8 +103,17 @@ class Home extends CI_Controller {
 				$this -> data["olho$i"] =  substr($recordset[$i]["descricao_home"]."",0 , 140 ) . "...";
 			}
 
+
+			if ( $recordset[$i]["sub_classificacao"] . '' == '' ) {
+
+				$this -> data["sub$i"] = $recordset[$i]["tipo_conteudo"];
+
+			}else{
+
+				$this -> data["sub$i"] = $recordset[$i]["sub_classificacao"];
+			}
 			
-			$this -> data["sub$i"] = $recordset[$i]["tipo_conteudo"];
+			
 
 
 			if ( $recordset[$i]["imagem_fundo"] == null ){

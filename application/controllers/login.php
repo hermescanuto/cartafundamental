@@ -60,8 +60,8 @@ class login extends CI_Controller {
 		$WSUserPassW='GDfr1rsf313#';
 		$MetodoValidacao_id='1';
 		$CodCliente='';
-		$Email_txt=$user ;// 'mmoreira@contentstuff.com';
-		$Senha_txt=$pass ;//CScap2013';
+		$Email_txt=$user ; // 'mmoreira@contentstuff.com';
+		$Senha_txt=$pass ; //CScap2013';
 		$CPFCNPJ_txt='';
 		$CEP_txt='';
 		
@@ -80,11 +80,11 @@ class login extends CI_Controller {
 			);
 		
 
-		$result = $client->CSWF_TabletLoginExternoBoolean( $dados );
+		// $result = $client->CSWF_TabletLoginExternoBoolean( $dados );
 		
-		$this->savelog( $Email_txt=$user,'Usuario autenticado Contentstuff',json_encode($dados) , json_encode($result->CSWF_TabletLoginExternoBooleanResult)  );
+		// $this->savelog( $Email_txt=$user,'Usuario autenticado Contentstuff',json_encode($dados) , json_encode($result->CSWF_TabletLoginExternoBooleanResult)  );
 		
-		if ( $result->CSWF_TabletLoginExternoBooleanResult ){
+		// if ( $result->CSWF_TabletLoginExternoBooleanResult ){
 			
 			//echo "Logado<br />\n";
 			$result = $client->CSWF_TabletEdicoesExterno ( $dados );
@@ -109,11 +109,11 @@ class login extends CI_Controller {
 			$this -> parser -> parse('front/edicao_download', $this->data);	
 
 			
-		}else{
+		// }else{
 			
-			$this->data['msg'] = 'Usuário ou senha invalido' ;
-			$this -> parser -> parse('front/login', $this->data);	
-		}
+		// 	$this->data['msg'] = 'Usuário ou senha invalido' ;
+		// 	$this -> parser -> parse('front/login', $this->data);	
+		// }
 
 
 	}

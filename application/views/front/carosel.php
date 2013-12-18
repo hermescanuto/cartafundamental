@@ -13,8 +13,10 @@
 			<a href="{base_url}single/show/{destaque_id0}"><img src="{imagem_home0}" alt="{titulo0}"></a>
 			<div class="container">
 				<div class="carousel-caption">
-					{titulo_destaque0}<br>
-					{desc0}				
+					<a href="{base_url}single/show/{destaque_id0}">
+					<span style='font-weight: bold;font-size: 15px;font-family: verdana;
+'>{titulo_destaque0}</span><br>
+					{desc0}	</a>			
 				</div>
 			</div>
 		</div>
@@ -23,8 +25,9 @@
 			<a href="{base_url}single/show/{destaque_id1}"><img src="{imagem_home1}" alt="{titulo1}"></a>
 			<div class="container">
 				<div class="carousel-caption">
-					{titulo_destaque1}<br>
-					{desc1}				
+					<a href="{base_url}single/show/{destaque_id1}">
+					<span style='font-weight: bold;font-size: 15px;font-family: verdana;'>{titulo_destaque1}</span><br>
+					{desc1}	</a>			
 				</div>
 			</div>
 		</div>
@@ -33,8 +36,9 @@
 			<a href="{base_url}single/show/{destaque_id2}"><img src="{imagem_home2}" alt="{titulo2}"></a>
 			<div class="container">
 				<div class="carousel-caption">
-					{titulo_destaque2}<br>
-					{desc2}				
+					<a href="{base_url}single/show/{destaque_id2}">
+					<span style='font-weight: bold;font-size: 15px;font-family: verdana;'>{titulo_destaque2}</span><br>
+					{desc2}	</a>			
 				</div>
 			</div>
 		</div>
@@ -42,8 +46,8 @@
 	</div>
 
 	<!-- Controls -->
-	<a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="icon-prev"></span> </a> 
-	<a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="icon-next"></span> </a>
+	<a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="icon-prev" style='font-size: 91px;'></span> </a> 
+	<a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="icon-next"  style='font-size: 91px;'></span> </a>
 </div>
 
 

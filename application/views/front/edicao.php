@@ -13,11 +13,7 @@
 	<!--fontes -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-	<link href='http://fonts.googleapis.com/css?family=Raleway+Dots' rel='stylesheet' type='text/css'>
 
-
-	
-	
 	<base href="{url}"/>
 	<link rel="image_src" href="{base_url}upload/{imagem_fundo}"/>
 	<meta name="description" content="{descricao}" />
@@ -30,11 +26,20 @@
 	<meta property="og:image:width" content="200"/>
 	<meta property="og:url"	content="{url}"/>
 
+	<style type="text/css">
+
+	.barra_cinza {
+		padding: 10px 30px;
+	}
+
+	</style>
+
 	<!-- Icones para favoritos -->
 	<?php include 'faveicon.php'; ?>
-	
+
 	<!-- Google Analitics -->
-   <?php include 'googleanalytics.php'; ?> </head>
+	<?php include 'googleanalytics.php'; ?> 
+</head>
 <body>
 
 	<!-- Barra da simples -->
@@ -51,22 +56,11 @@
 		<?php include('menu.php') ?>
 		<!-- menu  -->
 
-		<!-- Barra da imagem da materia  -->
-		<div class="row fundo_branco">	
-			<div class="col-lg-10 col-lg-offset-1 fundo_branco">
-				<div style='width: 100%;text-align: left;font-size: 10px;margin-bottom: 4px;'>{credito_foto} </div>
-				<img src="{base_url}upload/{imagem_fundo}" alt="{titulo}" class='img-responsive' >
-				<p class="legenda_foto">{legenda_foto} </p>
-			</div>
-		</div>
-		<!-- Barra da imagem da materia  -->
-
 
 		<!-- Barra cinza -->
 		<div class="row barra_cinza">	
 			<div class="col-lg-10 col-lg-offset-1 barra_cinza" id='barra_cinza'>
-				<h2 style="font-family: verdana" ><span class="aspas">//</span>{titulo}</h2>
-				<span style="font-family: verdana">{descricao}</span>
+				<h4><span class="aspas">//</span>Edição: {edicao}</h4>
 			</div>
 		</div>
 		<!-- Barra cinza   -->
@@ -77,57 +71,58 @@
 			<!-- coluna 1 -->
 			<div class="col-lg-7 col-md-9 col-lg-offset-1 fundo_branco" id='coluna1'>	
 
-				<h5 style=" font-family: verdana;  font-size: 13px;"><span class="aspas">//</span>Por {autor} </h5>
-				
-				{texto} {texto_extra}
 
-				
-					
-					<i>Publicado na edição {edicao}, de {edicao_mes} de {ano} </i>
+ 		    {recordset}
+			<div class="row clearfix" style='margin-top:10px; margin-bottom:17px'>
 
-					<br><br><br>
+				<div class="col-sm-2 col-md-2 col-lg-2 ">
 
-					<button type="button" class="btn btn-default"><a href="http://www.mercadoconfianca.com.br/" target='_blank'>Assine Carta Fundamental</a></button>
-					<br>
 
-					<hr class='row-divider'>
-
-					<!-- painel_discussao -->
-					<?php include('painel_discussao.php') ?>
-					<!-- painel_discussao -->
-
-				</div>
-				<!-- coluna 2 -->
-				<div class="col-lg-3 col-md-3 fundo_branco" id='coluna2'>
-							<!-- Ultima edicao  -->
-								<?php include('ultima_edicao.php') ?>
-							<!-- Ultima edicao  -->
-
-					<!-- <h4><span class="aspas">//</span> Saiba Mais</h4> -->
-					<span style='font-size: 11px;'>Envie comentário, sugestão ou crítica<br> para
-						<a href="mailto:fundamental@cartacapital.com.br">fundamental@cartacapital.com.br</a>
-					<span>
+										
 				</div>
 
 
-				
+				<div class="col-sm-10  col-md-10 col-lg-10">
+
+					<!-- <img src="{base_url}/upload/{imagem_fundo}" alt="{titulo}" class='img-responsive'> -->
+														
+					<a href="{base_url}single/show/{id}"><h4 style='margin-bottom: 2px;'>{titulo}</h4></a>
+                   	<span style='margin-bottom: 10px;'>{descricao} <span>
+					 
+				</div>	
 
 
 			</div>
-			<!-- Barra do conteudo  -->
+		    {/recordset}
 
+
+				<hr class='row-divider'>
+
+			</div>
+			<!-- coluna 2 -->
+			<div class="col-lg-3 col-md-3 fundo_branco" id='coluna2'>
+				<!-- Ultima edicao  -->
+				<?php include('ultima_edicao.php') ?>
+				<!-- Ultima edicao  -->
+			</div>
 
 
 		</div>
+		<!-- Barra do conteudo  -->
 
-		<!-- rodape -->
-		<?php include('rodape.php') ?>
-		<!-- rodape -->
 
-	
+
+	</div>
+
+	<!-- rodape -->
+	<?php include('rodape.php') ?>
+	<!-- rodape -->
+
+
 
 	<script src="//code.jquery.com/jquery.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>	
-		
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="{base_url}/js/ajuste.js"></script>	
+
 </body>
 </html>

@@ -20,7 +20,7 @@ $("#bt_buscar").click(function() {
 
 			var busca=$('#buscaModal').val();
 
-			alert( busca )
+			//alert( busca )
 
 			if ( busca+"" != "") {
 
@@ -35,7 +35,7 @@ $("#bt_busca_simples").click(function() {
 
 			var busca=$('#busca').val();
 
-			alert( busca )
+			//alert( busca )
 
 			if ( busca+"" != "") {
 

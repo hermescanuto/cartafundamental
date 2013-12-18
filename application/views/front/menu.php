@@ -125,13 +125,13 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
             <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span><input type="email" class="form-control" id="nome" name='nome' placeholder="Digite seu e-mail" value='mmoreira@contentstuff.com' >
+            <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span><input type="email" class="form-control" id="nome" name='nome' placeholder="Digite seu e-mail" value='' >
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Senha</label>
             <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-key"></i></span><input type="password" class="form-control" id="senha" name='senha' placeholder="Digite sua senha" value='CScap2013' >
+            <span class="input-group-addon"><i class="fa fa-key"></i></span><input type="password" class="form-control" id="senha" name='senha' placeholder="Digite sua senha" value='' >
           </div>
         </div>
           <button type="submit" class="btn btn-default">Logar</button>

@@ -59,7 +59,7 @@
 		<!-- Barra cinza -->
 		<div class="row barra_cinza">	
 			<div class="col-lg-10 col-lg-offset-1 barra_cinza" id='barra_cinza'>
-				<h4><span class="aspas">//</span>Miolo/h4>
+				<h4><span class="aspas">//</span>Miolo</h4>
 			</div>
 		</div>
 		<!-- Barra cinza   -->
@@ -87,14 +87,12 @@
 			</div>
 			<!-- coluna 2 -->
 			<div class="col-lg-3 col-md-3 fundo_branco" id='coluna2'>
-				<h4  ><span class="aspas">//</span>Edição do mês {edicao_numero} </h4>
-				<a href="{base_url}edicao/{edicao_numero}" class="opener">
-					<img src="{base_url}upload/capa/{edicao_capa}" alt="Capa {edicao_numero} abril Carta na Escola revista mensal" width="205" height="261"  />
-				</a> 
-
-				<h4><span class="aspas">//</span> Saiba Mais</h4>
-
-				<p>{texto_extra}</p>
+				<!-- Ultima edicao  -->
+								<?php include('ultima_edicao.php') ?>
+							<!-- Ultima edicao  -->
+					<span style='font-size: 11px;'>Envie comentário, sugestão ou crítica<br> para
+						<a href="mailto:fundamental@cartacapital.com.br">fundamental@cartacapital.com.br</a>
+					<span>
 			</div>
 
 

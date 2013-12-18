@@ -73,11 +73,11 @@
 
 
 						
-				 <p>Facilita a vida do professor, favorecendo a atualização dos conteúdos educativos para o corpo docente.</p>
-					<p>O objetivo é reunir temas e reflexões para enriquecer as aulas dos professores dos anos fundamentais à vida de qualquer estudante, sendo um veículo de transformação e melhora da qualidade da educação.</p>
-					<p>A revista tem o conteúdo próprio, sendo 60% direcionados a temas de aulas que seguem orientações do MEC para complementar o material didático, trazendo uma nova forma de ensinar e se atualizar.</p>
-					<p>Circulação: 185.428 exemplares/mês<br>
-					  <br>
+				 Carta Fundamental reúne temas e reflexões para enriquecer as aulas dos professores do ensino fundamental 1 e 2. <br> <br>
+
+Criada em 2008, a publicação mensal traz conteúdos alinhados às orientações do MEC para os anos fundamentais na vida de qualquer estudante, 
+priorizando uma nova forma de ensinar e se atualizar. No escopo de colunistas, estão a escritora Ana Maria Machado, 
+a professora Marisa Lajolo e músico e compositor Braulio Tavares. A orientação pedagógica é da consultora Maria José Nóbrega.
 					  <br>
 					  <br>
 					  <br>

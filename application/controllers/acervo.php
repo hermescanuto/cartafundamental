@@ -27,7 +27,7 @@ class acervo extends CI_Controller {
 		$this->data['edicao_numero'] = $recordset['edicao'];
 		
 		$this -> data["lista_acervo"] = $this->Model_util->lista_acervo();
-		
+
 		$this -> data["alvo_acervo"] = 'current-menu-item';
 		$this -> parser -> parse('front/acervo', $this -> data);
 	}

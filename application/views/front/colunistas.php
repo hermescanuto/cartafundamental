@@ -7,17 +7,12 @@
 	<title>Carta Fundamental | {titulo}"</title>	
 
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="{base_url}css/cartafundamental.css">
 
 	<!--fontes -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-	<link href='http://fonts.googleapis.com/css?family=Raleway+Dots' rel='stylesheet' type='text/css'>
 
-
-	
-	
 	<base href="{url}"/>
 	<link rel="image_src" href="{base_url}upload/{imagem_fundo}"/>
 	<meta name="description" content="{descricao}" />
@@ -30,11 +25,20 @@
 	<meta property="og:image:width" content="200"/>
 	<meta property="og:url"	content="{url}"/>
 
+	<style type="text/css">
+
+	.barra_cinza {
+		padding: 10px 30px;
+	}
+
+	</style>
+
 	<!-- Icones para favoritos -->
 	<?php include 'faveicon.php'; ?>
-	
+
 	<!-- Google Analitics -->
-   <?php include 'googleanalytics.php'; ?> </head>
+	<?php include 'googleanalytics.php'; ?> 
+</head>
 <body>
 
 	<!-- Barra da simples -->
@@ -51,22 +55,11 @@
 		<?php include('menu.php') ?>
 		<!-- menu  -->
 
-		<!-- Barra da imagem da materia  -->
-		<div class="row fundo_branco">	
-			<div class="col-lg-10 col-lg-offset-1 fundo_branco">
-				<div style='width: 100%;text-align: left;font-size: 10px;margin-bottom: 4px;'>{credito_foto} </div>
-				<img src="{base_url}upload/{imagem_fundo}" alt="{titulo}" class='img-responsive' >
-				<p class="legenda_foto">{legenda_foto} </p>
-			</div>
-		</div>
-		<!-- Barra da imagem da materia  -->
-
 
 		<!-- Barra cinza -->
 		<div class="row barra_cinza">	
 			<div class="col-lg-10 col-lg-offset-1 barra_cinza" id='barra_cinza'>
-				<h2 style="font-family: verdana" ><span class="aspas">//</span>{titulo}</h2>
-				<span style="font-family: verdana">{descricao}</span>
+				<h4><span class="aspas">//</span>Colunistas</h4>
 			</div>
 		</div>
 		<!-- Barra cinza   -->
@@ -77,57 +70,51 @@
 			<!-- coluna 1 -->
 			<div class="col-lg-7 col-md-9 col-lg-offset-1 fundo_branco" id='coluna1'>	
 
-				<h5 style=" font-family: verdana;  font-size: 13px;"><span class="aspas">//</span>Por {autor} </h5>
-				
-				{texto} {texto_extra}
 
-				
-					
-					<i>Publicado na edição {edicao}, de {edicao_mes} de {ano} </i>
+				<p>
+					Carta Fundamental reúne temas e reflexões para enriquecer as aulas dos professores do ensino fundamental 1 e 2. <br>
 
-					<br><br><br>
+Criada em 2008, a publicação mensal traz conteúdos alinhados às orientações do MEC para os anos fundamentais na vida de qualquer estudante, priorizando uma nova forma de ensinar e se atualizar. 
+<br>No escopo de colunistas, estão a escritora Ana Maria Machado, a professora Marisa Lajolo e músico e compositor Braulio Tavares. A orientação pedagógica é da consultora Maria José Nóbrega.
+				</p>
 
-					<button type="button" class="btn btn-default"><a href="http://www.mercadoconfianca.com.br/" target='_blank'>Assine Carta Fundamental</a></button>
-					<br>
+			
 
-					<hr class='row-divider'>
 
-					<!-- painel_discussao -->
-					<?php include('painel_discussao.php') ?>
-					<!-- painel_discussao -->
 
-				</div>
-				<!-- coluna 2 -->
-				<div class="col-lg-3 col-md-3 fundo_branco" id='coluna2'>
-							<!-- Ultima edicao  -->
+
+
+
+				<hr class='row-divider'>
+
+			</div>
+			<!-- coluna 2 -->
+			<div class="col-lg-3 col-md-3 fundo_branco" id='coluna2'>
+				<!-- Ultima edicao  -->
 								<?php include('ultima_edicao.php') ?>
 							<!-- Ultima edicao  -->
-
-					<!-- <h4><span class="aspas">//</span> Saiba Mais</h4> -->
 					<span style='font-size: 11px;'>Envie comentário, sugestão ou crítica<br> para
 						<a href="mailto:fundamental@cartacapital.com.br">fundamental@cartacapital.com.br</a>
 					<span>
-				</div>
-
-
-				
-
-
 			</div>
-			<!-- Barra do conteudo  -->
-
 
 
 		</div>
+		<!-- Barra do conteudo  -->
 
-		<!-- rodape -->
-		<?php include('rodape.php') ?>
-		<!-- rodape -->
 
-	
+
+	</div>
+
+	<!-- rodape -->
+	<?php include('rodape.php') ?>
+	<!-- rodape -->
+
+
 
 	<script src="//code.jquery.com/jquery.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>	
-		
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="{base_url}/js/ajuste.js"></script>	
+
 </body>
 </html>

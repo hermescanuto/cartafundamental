@@ -282,17 +282,21 @@ class Conteudo extends CI_Controller {
 
 
 		$busca = $this->uri->segment("5") ;
+
+
+
+
 		if ( is_numeric($busca) )  {
 			$campo_busca = 'edicao' ;
 			$orderby = 'edicao asc';
 		}else{
 
-			$campo_busca = 'titulo';
+	        $campo_busca = 'titulo';
+		
 		}
 
 
 		if ( $busca != null ) {
-
 
 			$where = array ($campo_busca => urldecode($busca) );
 		}
@@ -301,9 +305,14 @@ class Conteudo extends CI_Controller {
 			$where = '';
 		}
 
+
+		
+
 		//print_r ($where);
 
 		$result=$this->util->PaginationOn($table,20,base_url().'admin/'.$this->data['local'].'/paging',$fields,$where,$orderby); // cria a paginação
+
+		//echo $this->db->last_query();
 		$data = $result;
 
 		$data['base_url']=base_url();

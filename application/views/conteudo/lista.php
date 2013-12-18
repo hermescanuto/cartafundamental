@@ -1,4 +1,4 @@
-<div style="padding-left: 5px">
+	<div style="padding-left: 5px">
 	<b>->Conteúdo</b> <br />
 	<p>Total de Registro:{record_count}</p>
 	<table border="0" class="table table-striped" width="80%">
@@ -28,7 +28,7 @@
 				<td><strong>{tipo_conteudo}</strong>
 				</td>
 				<td>{titulo}</td>
-				<td><a href='{base_url}admin/{local}/ShowReport/{id}'
+				<td><a href='{base_url}admin/{local}/ShowReport/{id}' target='_edita'
 					title='Edita o registro' data-toggle="tooltip"
 					data-placement="left" rel="tooltip"><i class="icon-pencil"></i>
 				</a> <a

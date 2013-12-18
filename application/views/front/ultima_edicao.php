@@ -6,3 +6,5 @@
 		<a href='{base_url}acervo' >Edições Anteriores</a>	| 
 		<a href='http://www.mercadoconfianca.com.br/cartacapital.asp?Site_txt=EDITORIAL&Origem_txt=CARTANAESCOLA&Formato_txt=CAPA' target='assine' >Assine</a> 			
 	</div>	
+	<br>
+<br>
