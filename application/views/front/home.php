@@ -6,7 +6,7 @@
 
 	<title>Carta Fundamental | Titulo da Pagina"</title>	
 
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
 
 		<link rel="stylesheet" href="{base_url}css/cartafundamental.css">
@@ -225,12 +225,14 @@
 
 
 
-		<script src="//code.jquery.com/jquery.js"></script>
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 			$('.carousel').carousel();			
 		</script>	
-		<script src="{base_url}/js/ajuste.js"></script>
+		<script src="{base_url}js/ajuste.js"></script>
 
 	</body>
 	</html>
+
+	

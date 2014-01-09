@@ -20,29 +20,29 @@ $("#bt_buscar").click(function() {
 
 			var busca=$('#buscaModal').val();
 
-			//alert( busca )
+			alert( busca )
 
 			if ( busca+"" != "") {
 
-				window.location = 'http://www.cartafundamental.com.br/materias/paging/0/' + busca;
+				window.location = 'http://cf.cartacapital.com.br/materias/paging/0/' + busca;
 
 			}
 
 });
 
 
-// $("#bt_busca_simples").click(function() {
+$("#bt_busca_simples").click(function() {
 
-// 			var busca=$('#busca').val();
+			var busca=$('#busca').val();
 
-// 			alert( busca )
+			alert( busca )
 
-// 			if ( busca+"" != "") {
+			if ( busca+"" != "") {
 
-// 				window.location = 'http://www.cartafundamental.com.br/materias/paging/0/' + busca;
+				window.location = 'http://cf.cartacapital.com.br/materias/paging/0/' + busca;
 
-// 			}
+			}
 
-// }); 
+});
 
 

@@ -64,7 +64,8 @@ class Home extends CI_Controller {
 		$recordset['area5']=$this->Model_util->tipo3('vw_conteudo_publicado',$string,$data['id2']);
 		$recordset['area6']=$this->Model_util->tipo3('vw_conteudo_publicado',$string,$data['id3']);
 		
-		$data = $this->Model_util->ByIDtoTemplate($this->tabela,3);		
+		$data = $this->Model_util->ByIDtoTemplate($this->tabela,3);
+		
 		
 		$recordset['area7']=$this->Model_util->tipo3('vw_conteudo_publicado', $string,$data['id1']);
 		$recordset['area8']=$this->Model_util->tipo3('vw_conteudo_publicado', $string,$data['id2']);

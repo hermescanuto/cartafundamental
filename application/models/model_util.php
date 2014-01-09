@@ -101,10 +101,9 @@ class Model_util extends MY_Model {
                 $this -> db ->where($where);
 
             }  else {
-              
-                   
+    
                
-                  $this -> db ->like($where);
+                  $this -> db ->where($where);
                  // $this -> db ->like( 'autor' , $where2) ; 
             }
 
@@ -138,7 +137,7 @@ class Model_util extends MY_Model {
             }  else {
                 
                
-                $this -> db ->like($where);
+                $this -> db ->where($where);
                // $this->db->like( 'autor' , $where2 )  ; 
             }
 

@@ -57,7 +57,7 @@ class Materias extends CI_Controller {
 
 			$search = urldecode($busca);
 			
-			$busca = "( titulo like '%$search%' or descricao like '%$search%'  or descricao_home like '%$search%')";
+			$busca = "( titulo like '%$search%' or descricao like '%$search%'  or descricao_home like '%$search%' or autor like '%$search%' )";
 		}
 
 		if ($busca != null) {
@@ -70,6 +70,8 @@ class Materias extends CI_Controller {
 
 
 		$result = $this -> util -> PaginationOn($table, 20, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4",$this -> data['tipo_busca']);
+
+		//echo $this->db->last_query();
 		// cria a paginação
 		$data = $result;
 

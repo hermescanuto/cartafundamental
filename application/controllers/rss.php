@@ -18,8 +18,8 @@ class Rss extends CI_Controller {
 
     public function index() {
 
-        $this -> data['rss_titulo'] = "Carta fundamental";
-        $this -> data['rss_link'] = "http://www.cartafundamental.com.br";
+        $this -> data['rss_titulo'] = "Carta na Escola";
+        $this -> data['rss_link'] = "http://cn.cartacapital.com.br";
         $this -> data['rss_email'] = "contato@cartacapital.com.br";
         $this -> data['rss_descricao'] = "Site de conteúdo escolar";
 
@@ -33,7 +33,7 @@ class Rss extends CI_Controller {
         
         $this -> data['recordset'] = $this -> Model_util -> getRss($edicao);
 
-        $this -> parser -> parse('front/rsslista', $this -> data);
+        $this -> parser -> parse('front/rss', $this -> data);
 
     }
 
@@ -45,17 +45,6 @@ class Rss extends CI_Controller {
         $timestamp = strtotime($date . " " . $time);
         $rss_datetime = date(DATE_RFC2822, $timestamp);
         return $rss_datetime;
-    }
-    
-    function json(){
-        
-            $recordset = $this -> Model_util -> getCapa();
-            $edicao = $recordset['edicao'];
-            $data = $recordset['data_criacao'];
-        
-            $return = $this -> Model_util -> getRss($edicao);
-            
-            echo json_encode($return );
     }
 
 }

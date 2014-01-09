@@ -28,18 +28,6 @@ class login extends CI_Controller {
 
 	}
 
-	function cadastrase() {
-
-
-		$recordset = $this->Model_util->getCapa();
-		$this->data['edicao_capa'] = $recordset['imagem_capa'];
-		$this->data['edicao_numero'] = $recordset['edicao'];
-
-
-		$this -> parser -> parse('front/cadastrase', $this -> data);
-
-	}
-
 
 
 	function on(){
