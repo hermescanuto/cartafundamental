@@ -78,16 +78,33 @@ class login extends CI_Controller {
 			"CPFCNPJ_txt" 		=> $CPFCNPJ_txt,
 			"CEP_txt"			=> $CEP_txt
 			);
+
+		$AppId='br.com.cartafundamental.imp';
+
+		$dados2 =Array(
+			"UUID" 				=> $UUID,
+			"Device_txt" 		=> $Device_txt,
+			"AppId"				=> $AppId,
+			"WSUserName"		=> $WSUserName,
+			"WSUserPassW"		=> $WSUserPassW,
+			"MetodoValidacao_id"=> $MetodoValidacao_id,
+			"CodCliente"		=> $CodCliente,
+			"Email_txt"			=> $Email_txt,
+			"Senha_txt"			=> $Senha_txt,
+			"CPFCNPJ_txt" 		=> $CPFCNPJ_txt,
+			"CEP_txt"			=> $CEP_txt
+			);
 		
 
-		$result = $client->CSWF_TabletLoginExternoBoolean( $dados );
-		
-		$this->savelog( $Email_txt=$user,'Usuario autenticado Contentstuff',json_encode($dados) , json_encode($result->CSWF_TabletLoginExternoBooleanResult)  );
+		// verifica se é usuario do impresso
+
+		$result = $client->CSWF_TabletLoginExternoBoolean( $dados2 );		
+		$this->savelog( $Email_txt=$user,'Usuario autenticado Contentstuff Impresso',json_encode($dados) , json_encode($result->CSWF_TabletLoginExternoBooleanResult)  );
 		
 		if ( $result->CSWF_TabletLoginExternoBooleanResult ){
 			
 			//echo "Logado<br />\n";
-			$result = $client->CSWF_TabletEdicoesExterno ( $dados );
+			$result = $client->CSWF_TabletEdicoesExterno ( $dados2 );
 			
 			$result_arr = $this->objectToArray($result) ;
 			
@@ -99,7 +116,7 @@ class login extends CI_Controller {
 				$edicao[] = array('edicao' => $value );
 			}
 
-			$this->savelog( $Email_txt=$user ,'Importando titulos Contentstuff',json_encode($dados),json_encode($edicao) );
+			$this->savelog( $Email_txt=$user ,'Importando titulos Contentstuff Impresso',json_encode($dados),json_encode($edicao) );
 
 			$this->data['lista_edicao'] = $edicao;
 			$this->data['user'] = $Email_txt ;
@@ -110,9 +127,43 @@ class login extends CI_Controller {
 
 			
 		}else{
-			
-			$this->data['msg'] = 'Usuário ou senha invalido' ;
-			$this -> parser -> parse('front/login', $this->data);	
+
+			// verifica se é usuario do digital 
+
+			$result = $client->CSWF_TabletLoginExternoBoolean( $dados );
+			$this->savelog( $Email_txt=$user,'Usuario autenticado Contentstuff Digital',json_encode($dados) , json_encode($result->CSWF_TabletLoginExternoBooleanResult)  );
+
+
+			if ( $result->CSWF_TabletLoginExternoBooleanResult ){
+
+				$result = $client->CSWF_TabletEdicoesExterno ( $dados );
+
+				$result_arr = $this->objectToArray($result) ;
+
+				$lista = $this->objectToArray($result->CSWF_TabletEdicoesExternoResult);
+
+
+				foreach ($lista['anyType'] as $value) {
+				 //echo "Edicao: $value<br />\n";
+					$edicao[] = array('edicao' => $value );
+				}
+
+				$this->savelog( $Email_txt=$user ,'Importando titulos Contentstuff digital',json_encode($dados),json_encode($edicao) );
+
+				$this->data['lista_edicao'] = $edicao;
+				$this->data['user'] = $Email_txt ;
+				$this->data['senha']=  urlencode(  $this->encrypt($Senha_txt,'10101972') );
+
+				$this->data['msg'] = '' ;
+				$this -> parser -> parse('front/edicao_download', $this->data);	
+
+
+			}else{
+
+				$this->data['msg'] = 'Usuário ou senha invalido' ;
+				$this->savelog( $Email_txt=$user,'Falha na autenticação',json_encode($dados) , NULL  );
+				$this -> parser -> parse('front/login', $this->data);	
+			}
 		}
 
 
@@ -140,7 +191,7 @@ class login extends CI_Controller {
 
 		$dados = array( 'Email_txt' => $usuario) ;
 		$this->savelog( $usuario,'Download',json_encode($dados), $id  );
-		
+
 		$this->load->helper('download');
 
 		$file = base_url()."acervos/pdf/$id.pdf";

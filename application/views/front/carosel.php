@@ -10,13 +10,16 @@
 	<div class="carousel-inner">
 
 		<div class="item active">
+
 			<a href="{base_url}single/show/{destaque_id0}"><img src="{imagem_home0}" alt="{titulo0}"></a>
 			<div class="container">
 				<div class="carousel-caption">
-					<a href="{base_url}single/show/{destaque_id0}">
-					<span style='font-weight: bold;font-size: 15px;font-family: verdana;
-'>{titulo_destaque0}</span><br>
-					{desc0}	</a>			
+
+					<a  href="{base_url}single/show/{destaque_id0}">
+						<span >{titulo_destaque0}</span><br>
+						{desc0}	
+					</a>	
+
 				</div>
 			</div>
 		</div>
@@ -25,10 +28,13 @@
 			<a href="{base_url}single/show/{destaque_id1}"><img src="{imagem_home1}" alt="{titulo1}"></a>
 			<div class="container">
 				<div class="carousel-caption">
-					<a href="{base_url}single/show/{destaque_id1}">
-					<span style='font-weight: bold;font-size: 15px;font-family: verdana;'>{titulo_destaque1}</span><br>
-					{desc1}	</a>			
+
+					<a  href="{base_url}single/show/{destaque_id1}">
+						<span >{titulo_destaque1}</span><br>
+						{desc1}	
+					</a>			
 				</div>
+
 			</div>
 		</div>
 
@@ -36,9 +42,10 @@
 			<a href="{base_url}single/show/{destaque_id2}"><img src="{imagem_home2}" alt="{titulo2}"></a>
 			<div class="container">
 				<div class="carousel-caption">
-					<a href="{base_url}single/show/{destaque_id2}">
-					<span style='font-weight: bold;font-size: 15px;font-family: verdana;'>{titulo_destaque2}</span><br>
-					{desc2}	</a>			
+					<a  href="{base_url}single/show/{destaque_id2}">
+						<span >{titulo_destaque2}</span><br>
+						{desc2}	
+					</a>			
 				</div>
 			</div>
 		</div>

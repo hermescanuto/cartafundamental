@@ -13,7 +13,7 @@ class Contato extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this -> load -> library('util');
-		$this -> load -> library('twitter');
+		//$this -> load -> library('twitter');
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
 	}
@@ -41,7 +41,7 @@ class Contato extends CI_Controller {
 		$msg = $msg ."<br/> Email:$email ";
 		$msg = $msg ."<br/><br/>  Comentario:<br/>$comments ";
 
-		echo $msg;
+		//echo $msg;
 
 		$this -> load -> library('email');
 
@@ -51,16 +51,14 @@ class Contato extends CI_Controller {
 		$config['wordwrap'] = TRUE;
 
 		$this -> email -> initialize($config);
-
 		$this -> email -> from('cartanaescola@cartanaescola.com.br', 'contato');
 		$this -> email -> to($to);
-
 		$this -> email -> subject('Contato - Carta na Escola');
 		$this -> email -> message($msg);
-
 		$this -> email -> send();
 
-	   $this -> parser -> parse('front/resposta_contato', $this -> data);
+
+	    $this -> parser -> parse('front/resposta_contato', $this -> data);
 
 
 	}
