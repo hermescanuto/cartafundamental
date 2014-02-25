@@ -110,11 +110,20 @@ class login extends CI_Controller {
 			
 			$lista = $this->objectToArray($result->CSWF_TabletEdicoesExternoResult);
 			
-			
+			$c=0;
 			foreach ($lista['anyType'] as $value) {
 				 //echo "Edicao: $value<br />\n";
 				$edicao[] = array('edicao' => $value );
+				$fim = $value;
+				$c++;
 			}
+
+			for ($i=$value-$c; $i > 0; $i--) { 
+				$edicao[] = array('edicao' => $i );
+			}
+
+			arsort($edicao);
+
 
 			$this->savelog( $Email_txt=$user ,'Importando titulos Contentstuff Impresso',json_encode($dados),json_encode($edicao) );
 
@@ -142,11 +151,19 @@ class login extends CI_Controller {
 
 				$lista = $this->objectToArray($result->CSWF_TabletEdicoesExternoResult);
 
-
+				$c=0;
 				foreach ($lista['anyType'] as $value) {
 				 //echo "Edicao: $value<br />\n";
 					$edicao[] = array('edicao' => $value );
+					$c++;
 				}
+
+				for ($i=$value-$c; $i > 0; $i--) { 
+					$edicao[] = array('edicao' => $i );
+				}
+
+				arsort($edicao);
+
 
 				$this->savelog( $Email_txt=$user ,'Importando titulos Contentstuff digital',json_encode($dados),json_encode($edicao) );
 
