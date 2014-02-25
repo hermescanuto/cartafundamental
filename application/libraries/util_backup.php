@@ -141,18 +141,18 @@ class util {
 		$config['uri_segment'] 	= $uri;
 		
 		
-
+	
 			
-			$config['first_link'] 	= '<i class="glyphicon glyphicon-fast-backward"></i>';
-			$config['prev_link']    = '<i class="glyphicon glyphicon-step-backward"></i>';
-			$config['last_link'] 	= '<i class="glyphicon glyphicon-fast-forward"></i>';
-			$config['next_link'] 	= '<i class="glyphicon glyphicon-step-forward"></i>';
-			
-			
+			$config['first_link'] 	= '<i class="icon-fast-backward"></i>';
+			$config['prev_link']    = '<i class="icon-step-backward"></i>';
+			$config['last_link'] 	= '<i class="icon-fast-forward"></i>';
+			$config['next_link'] 	= '<i class="icon-step-forward"></i>';
 			
 			
-			$config['full_tag_open'] = '<ul class="pagination pagination-sm" >';
-			$config['full_tag_close'] = '</ul>';
+			
+			
+			$config['full_tag_open'] = '<div class="pagination pagination-mini pagination-centered"><ul>';
+			$config['full_tag_close'] = '</ul></div>';
 			
 			$config['num_tag_open'] = '<li>';
 			$config['num_tag_close'] = '</li>';

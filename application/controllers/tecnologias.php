@@ -13,12 +13,14 @@ class Tecnologias extends CI_Controller {
 		$this -> load -> library('util');
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
-		$this -> data['local'] = $this -> uri -> segment("2");
+		$this -> data['local'] = $this -> uri -> segment("1");
 		$this -> data['tipo_busca'] = 9;
 		$this -> data['lista_legenda'] = "Tecnologia";
 	}
 
 	public function index() {
+
+		//echo 'local='. $this -> data['local'];
 		$this -> paging();
 		// paginacao
 	}
@@ -69,7 +71,7 @@ class Tecnologias extends CI_Controller {
 		$data['base_url'] = base_url();
 		$data['local'] = $this -> data['local'];
 		$data['lista_legenda'] = $this -> data['lista_legenda'] ;
-		$this -> parser -> parse('front/lista', $data);
+		//$this -> parser -> parse('front/lista', $data);
 		// Carrega o view de listagem de materia
 
 	}

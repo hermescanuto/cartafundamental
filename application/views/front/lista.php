@@ -32,6 +32,11 @@
 		padding: 10px 30px;
 	}
 
+	.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+		background-color: #dd6633;
+		border-color: #dd6633;
+	}
+
 	</style>
 
 	<!-- Icones para favoritos -->
@@ -90,6 +95,17 @@
 
 			</div>
 		    {/recordset}
+
+		    <div class="row"> 
+
+				<div class="col-sm-2 col-md-2 col-lg-2 ">
+										
+				</div>
+
+				<div class="col-sm-10  col-md-10 col-lg-10" >
+					    	{paginacao} 
+				</div>
+			</div>
 
 
 				<hr class='row-divider'>
