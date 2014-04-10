@@ -1,11 +1,4 @@
-<script>
-	$(function() {
-		var availableTags = [ {tag}"{nometag}",{/tag} ];		
-		
-		$("#busca").autocomplete({ source: availableTags });
-		
-	});		
-</script>
+
 <div class="barra"></div>
 <fieldset>
 

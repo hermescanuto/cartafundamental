@@ -1,13 +1,3 @@
-<script>
-	$(function() {
-		var availableTags = [ {tag}"{nometag}",{/tag} ];
-
-		$("#busca").autocomplete({
-			source : availableTags
-		});
-
-	}); 
-</script>
 
 <table border="0" cellspacing="2" cellpadding="0">
 

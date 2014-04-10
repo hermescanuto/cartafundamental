@@ -17,25 +17,43 @@
 
 
 		<div id="tabs-1">
-			<form name="form1" id="form1" action="{save}" method="post"
-				enctype="multipart/form-data" class="form-vertical">
+			<form name="form1" id="form1" action="{save}" method="post"	enctype="multipart/form-data" class="form-vertical">
 				<b>->HOME</b> <br />
 				<p>
 					ID: 1 <input type="hidden" name='id' id='id' value="1" />
 				</p>
 
 				<div class="control-group">
-					<label class="control-label">Home 1:</label> <select name="id_1"
-						id="id_1" style="˜width: 300px"""> {area1}
-						<option value="{valor}"{selected} >{legenda}</option> {/area1}
-					</select> <label class="control-label">Home 2:</label> <select
-						name="id_2" id="id_2"> {area2}
-						<option value="{valor}"{selected} >{legenda}</option> {/area2}
-					</select> <label class="control-label">Home 3:</label> <select
-						name="id_3" id="id_3"> {area3}
-						<option value="{valor}"{selected} >{legenda}</option> {/area3}
-					</select>
 
+					Home 1:
+
+					<input type="text" name="id_1" id="id_1" style='width:90px' value='{id_1}'  onfocusout='busca(this);' onqueijo='busca(this);' >
+
+					<input type="text" style='width:370px' id='id_1_texto' >
+
+					<img src="{base_url}pics/ajax.GIF" alt="Loader" style='padding-bottom: 10px;display:none' id='id_1_gif' >
+
+
+					<br>
+	
+					Home 2:
+
+					<input type="text" name="id_2" id="id_2" style='width:30px' value='{id_2}'  onfocusout='busca(this);'>
+
+					<input type="text" style='width:370px' id='id_2_texto' >
+
+					<img src="{base_url}pics/ajax.GIF" alt="Loader" style='padding-bottom: 10px;;display:none' id='id_2_gif'>
+
+					<br>
+
+					Home 3:
+
+					<input type="text" name="id_3" id="id_3" style='width:30px' value='{id_3}' onfocusout='busca(this);'>
+
+					<input type="text" style='width:370px' id='id_3_texto' >
+
+					<img src="{base_url}pics/ajax.GIF" alt="Loader" style='padding-bottom: 10px;;display:none' id='id_3_gif'>
+		
 				</div>
 
 
@@ -45,7 +63,7 @@
 
 		<div id="tabs-2">
 
-			<form name="form2" id="form1" action="{save}" method="post"
+			<form name="form2" id="form2" action="{save}" method="post"
 				enctype="multipart/form-data" class="form-vertical">
 				<b>->HOME Destaque Linha 1</b> <br />
 				<p>
@@ -53,16 +71,26 @@
 				</p>
 
 				<div class="control-group">
-					<label class="control-label">Home 1:</label> <select name="id_1"
-						id="id_1" style="˜width: 300px"""> {area4}
-						<option value="{valor}"{selected} >{legenda}</option> {/area4}
-					</select> <label class="control-label">Home 2:</label> <select
-						name="id_2" id="id_2"> {area5}
-						<option value="{valor}"{selected} >{legenda}</option> {/area5}
-					</select> <label class="control-label">Home 3:</label> <select
-						name="id_3" id="id_3"> {area6}
-						<option value="{valor}"{selected} >{legenda}</option> {/area6}
-					</select>
+
+
+					Home 1:
+
+					<input type="text" name="id_1" id="id_1" style='width:30px' value='{id_4}' >
+
+					<input type="text" style='width:100px' id='id_1_texto' >
+
+<br>
+					 Home 2:
+
+					<input type="text" name="id_2" id="id_2" style='width:30px' value='{id_5}' >
+
+				
+<br>
+					Home 3:
+
+					<input type="text" name="id_3" id="id_3" style='width:30px' value='{id_6}' >					
+
+				
 
 				</div>
 
@@ -72,7 +100,7 @@
 		</div>
 
 		<div id="tabs-3">
-			<form name="form2" id="form1" action="{save}" method="post"
+			<form name="form3" id="form3" action="{save}" method="post"
 				enctype="multipart/form-data" class="form-vertical">
 				<b>->HOME Destaque Linha 2</b> <br />
 				<p>
@@ -80,16 +108,18 @@
 				</p>
 
 				<div class="control-group">
-					<label class="control-label">Home 1:</label> <select name="id_1"
-						id="id_1" style="˜width: 300px"""> {area7}
-						<option value="{valor}"{selected} >{legenda}</option> {/area7}
-					</select> <label class="control-label">Home 2:</label> <select
-						name="id_2" id="id_2"> {area8}
-						<option value="{valor}"{selected} >{legenda}</option> {/area8}
-					</select> <label class="control-label">Home 3:</label> <select
-						name="id_3" id="id_3"> {area9}
-						<option value="{valor}"{selected} >{legenda}</option> {/area9}
-					</select>
+
+					Home 1: <input type="text" name="id_1" id="id_1" style='width:30px' value='{id_7}' >
+
+
+				
+
+					 <br>Home 2: <input type="text" name="id_2" id="id_2" style='width:30px' value='{id_8}' >
+
+				
+
+					<br> Home 3: <input type="text" name="id_3" id="id_3" style='width:30px' value='{id_9}' >
+				
 
 				</div>
 
@@ -108,16 +138,17 @@
 				</p>
 
 				<div class="control-group">
-					<label class="control-label">Home 1:</label> <select name="id_1"
-						id="id_1" style="˜width: 300px"""> {area10}
-						<option value="{valor}"{selected} >{legenda}</option> {/area10}
-					</select> <label class="control-label">Home 2:</label> <select
-						name="id_2" id="id_2"> {area11}
-						<option value="{valor}"{selected} >{legenda}</option> {/area11}
-					</select> <label class="control-label">Home 3:</label> <select
-						name="id_3" id="id_3"> {area12}
-						<option value="{valor}"{selected} >{legenda}</option> {/area12}
-					</select>
+
+					Home 1: <input type="text" name="id_1" id="id_1" style='width:30px' value='{id_10}'>
+
+				
+					 <br>Home 2: <input type="text" name="id_2" id="id_2" style='width:30px' value='{id_11}' >
+
+					
+
+					<br>Home 3: <input type="text" name="id_3" id="id_3" style='width:30px' value='{id_12}' >
+
+					
 
 				</div>
 
@@ -127,11 +158,27 @@
 
 		</div>
 	</div>
+
+	<iframe src="{base_url}admin/conteudo" frameborder="0" style='width: 100%;height: 1100px;' id='alvo' ></iframe>
+
 </div>
 
 <script>
-	$(document).ready(function() {
 
-		$("#painel_campos").tabs();
-	});
+
+
+
+$(document).ready(function() {
+
+
+	busca = function (obj){
+		   $('#'+obj.id+'_gif').show();
+	};
+
+
+	$("#painel_campos").tabs();
+
+});
+
+
 </script>

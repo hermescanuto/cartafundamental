@@ -54,7 +54,7 @@
 		<!-- Barra cinza -->
 		<div class="row fundo_branco">	
 			<div class="col-lg-10 col-lg-offset-1 barra_cinza" id='barra_cinza'>
-				<h2><span class="aspas">//</span>Download das Edições</h2>
+				<h2><span class="aspas">//</span>Edições Digitais</h2>
 			
 			</div>
 		</div>
@@ -70,7 +70,9 @@
 				
 				<p>
 			{lista_edicao}
-					  Edição {edicao}. <a href="{base_url}login/showdpf/{edicao}/{user}/{senha}" > Download PDF</a>    -     <a href="{base_url}login/showpdfhtml/{edicao}/{user}/{senha}" target='edicao_html5'> Visualizar PDF </a> <br>
+					  Edição {edicao}. <a href="{base_url}login/showpdfhtml/{edicao}/{user}/{senha}" 
+					  					  target='edicao_html5'
+					  					  onclick="ga('send', 'event', 'Leitura_on_line', 'Edicao', '{edicao}');" > Ler Online  </a> <br>
             {/lista_edicao}
 
 				<p>
