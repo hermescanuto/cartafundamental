@@ -28,8 +28,13 @@ class Conteudo extends CI_Controller {
 	{
 		$this->data['title']='Conteúdo';
 		$this->data['js']= 	array(
-				array('js_url' => 'http://code.jquery.com/jquery-latest.min.js'),
-				array('js_url' => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'),
+				// array('js_url' => 'http://code.jquery.com/jquery-latest.min.js'),
+				// array('js_url' => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'),
+
+				array('js_url' => 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'),			
+				array('js_url' => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js'),
+
+
 				array('js_url' =>  base_url().'js/bootstrap.js'),				
 				array('js_url' =>  base_url().'js/ckeditor/ckeditor.js'),
 				array('js_url' =>  base_url().'js/ckeditor/adapters/jquery.js'),
@@ -396,6 +401,15 @@ class Conteudo extends CI_Controller {
 		
 		redirect( base_url().'admin/'.$this->data['local'] );
 		
+	}
+
+
+	function ajaxshow($idx){
+
+		$data = $this -> Model_util -> ByIDtoTemplate($this -> tabela, $idx);
+
+		echo json_encode( $data  );
+
 	}
 
 }
