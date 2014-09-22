@@ -74,7 +74,7 @@ class util {
 
 	function ShowADMMenu($type = '')
 	{
-		$CI =& get_instance();
+		$CI = & get_instance();
 		$CI->load->model('model_util');
 		$data['menu_item'] = $CI->model_util->getmenu($type);
 

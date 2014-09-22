@@ -10,7 +10,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{base_url}home" class="active" >HOME</a>
+        <a class="navbar-brand active" href="{base_url}home"  >HOME</a>
         <a class='navbar-brand visible-xs' data-toggle="modal" href="#myModalBusca" style='margin-left:-20px'><i class="fa fa-search"></i> BUSCAR</a>
         <a class='navbar-brand visible-xs' data-toggle="modal" href="#myModalLogar" style='margin-left:-20px'><i class="fa fa-unlock-o"></i> LOGAR</a>
       </div>
@@ -57,7 +57,7 @@
             </ul>
           </li>
 
-          <li class='visible-xs' ><a href="http://www.mercadocapital.com.br/" target='assine' >Assinante</a</li>
+          <li class='visible-xs' ><a href="http://www.mercadocapital.com.br/" target='assine' >Assinante</a></li>
           <li class='visible-xs' ><a href="{base_url}tablet">Tablet</a></li>
           <li class='visible-xs' ><a href="{base_url}login/cadastrase">Cadastre-se</a></li>             
 
@@ -70,35 +70,17 @@
             </ul>
           </li>
 
-          <li class='visible-xs' ><a href="{base_url}contato">Contato</a</li>
+          <li class='visible-xs' ><a href="{base_url}contato">Contato</a></li>
           <li class='visible-xs' ><a href="{base_url}sobre">Sobre</a></li>
-          <li class='visible-xs' ><a href="{base_url}expediente">Expediente</a></li>   
+          <li class='visible-xs' ><a href="{base_url}expediente">Expediente</a></li>  
+          <li class='visible-xs' ><a href="http://editoraconfianca.com.br/acesso/cartafundamental">Revista Digital</a></li> 
+          <li class='visible-xs' ><a href="http://www.mercadoconfianca.com.br/CartaFundamental.asp?Site_txt=EDITORIAL&Origem_txt=CARTA&Formato_txt=MENUTOPO&Banner_txt=&Versao_txt=">Assine</a></li>  
 
-          <!--   visivel em barra de navegacao -->
-<!--           <li style='margin-top: 18px;margin-left: 5px;' class='hidden-xs hidden-sm'>
-            <form class="form-inline" role="form">
-              <input type="text" class="form-control" id="busca" required='' style='font-size: 8px; font-family: arial;'>
-              <button type="button" class="btn btn-default btn-xs" id='bt_busca_simples' ><i class="fa fa-search"></i>  BUSCAR</button>
-            </form>                
-          </li> -->
-
-          <!--   visivel em barra de navegacao -->
-<!--           <li style='margin-top: 18px;margin-left: 10px;' class='hidden-xs hidden-sm'>
-
-            <form class="form-inline" role="form" role="form" action="{base_url}login/on" name="form0" id="form0" method="post" target="acervo_lista" >
-            
-              <input type="text" class="form-control" id="nome" name='nome' placeholder="login" required='' value='mmoreira@contentstuff.com' style='font-size: 8px; font-family: arial;'>
-
-             <input type="password" class="form-control" id="senha" name='senha' placeholder="senha" required='' value='CScap2013' style='font-size: 8px; font-family: arial;'>
-
-              <button class="btn btn-default btn-xs" type="submit"><i class="fa fa-unlock-o"></i> LOGAR</button>    
-                
-            </form>                
-          </li> -->
+        
 
          <!-- visivel em celulares e telas pequenas -->
           <li  ><a data-toggle="modal" href="#myModalBusca" ><i class="fa fa-search"></i> BUSCAR</a></li><!-- class='visible-xs visible-sm' -->
-          <li  ><a data-toggle="modal" href="#myModalLogar" ><i class="fa fa-unlock-o"></i> EDIÇÃO DIGITAL</a></li><!-- class='visible-xs visible-sm' -->
+        <!--   <li  ><a data-toggle="modal" href="#myModalLogar" ><i class="fa fa-unlock-o"></i> EDIÇÃO DIGITAL</a></li> --><!-- class='visible-xs visible-sm' -->
 
         </ul>
 
@@ -111,7 +93,7 @@
 
 
 <!-- Modal Busca -->
-<div class="modal fade" id="myModalLogar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModalLogar" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -123,13 +105,13 @@
 
         <form role="form" action="{base_url}login/on" name="form1" id="form1" method="post" target="acervo_lista" >
           <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
+            <label for="nome">Email</label>
             <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span><input type="email" class="form-control" id="nome" name='nome' placeholder="Digite seu e-mail" value='' >
             </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Senha</label>
+            <label for="senha">Senha</label>
             <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-key"></i></span><input type="password" class="form-control" id="senha" name='senha' placeholder="Digite sua senha" value='' >
           </div>
@@ -140,6 +122,7 @@
 
       </div>
       <div class="modal-footer">
+
         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
       </div>
     </div><!-- /.modal-content -->
@@ -148,7 +131,7 @@
 
 
 <!-- Modal Busca -->
-<div class="modal fade" id="myModalBusca" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModalBusca" tabindex="-1" role="dialog"  aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -158,14 +141,18 @@
       <div class="modal-body">
 
 
-        <form role="form" >
-          <div class="form-group"><label for="exampleInputEmail1"></label>
+       
+          <div class="form-group"><label for="buscaModal"></label>
               <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-search"></i></span><input type="texto" class="form-control" id="buscaModal" placeholder="Digite sua busca" required=''  x-webkit-speech >
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+
+            <input type="text" class="form-control" id="buscaModal" name='buscaModal' placeholder="Digite sua busca"  >
+    
+
           </div>
           </div>
-          <button type="button" class="btn btn-default" id='bt_buscar' >Buscar</button>
-        </form>
+          <button type="button" class="btn btn-default" id='btn_buscar' onclick='go()' >Buscar</button>
+       
 
 
       </div>
@@ -175,4 +162,22 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<script >
+
+
+function go(){
+
+  busca = document.getElementById('buscaModal').value;
+
+  if ( busca + '' != '' ){
+
+      window.location ='http://www.cartafundamental.com.br/materias/paging/0/' + busca;
+
+  }
+
+
+}
+
+</script>
 

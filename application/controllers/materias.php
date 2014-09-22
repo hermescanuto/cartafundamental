@@ -57,7 +57,14 @@ class Materias extends CI_Controller {
 
 			$search = urldecode($busca);
 			
-			$busca = "( titulo like '%$search%' or descricao like '%$search%'  or descricao_home like '%$search%' or autor like '%$search%' )";
+			$busca = "(		titulo 			like '%$search%' 
+						or 	descricao 		like '%$search%'  
+						or 	descricao_home 	like '%$search%' 
+						or 	autor 			like '%$search%' 
+						or  titulo_home 	like '%$search%' 
+						or 	descricao_home 	like '%$search%' 
+
+						)";
 		}
 
 		if ($busca != null) {

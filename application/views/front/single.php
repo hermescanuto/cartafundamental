@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Carta Fundamental | {titulo}"</title>	
+	<title>Carta Fundamental | {titulo}</title>	
 
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
@@ -15,6 +15,7 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Raleway+Dots' rel='stylesheet' type='text/css'>
 
+	<link rel="stylesheet" href="{base_url}css/jquery.share.css">
 
 	
 	
@@ -77,9 +78,22 @@
 			<!-- coluna 1 -->
 			<div class="col-lg-7 col-md-9 col-lg-offset-1 fundo_branco" id='coluna1'>	
 
+
+			  <div id="mysocial"></div>
+
+
 				<h5 style=" font-family: verdana;  font-size: 13px;"><span class="aspas">//</span>Por {autor} </h5>
+
+
+				<div class="texto_geral" style='font-size:15px'>
+					
+
+					{texto} {texto_extra}
+
+
+				</div>
 				
-				{texto} {texto_extra}
+				
 
 				
 					
@@ -107,6 +121,29 @@
 					<span style='font-size: 11px;'>Envie comentário, sugestão ou crítica<br> para
 						<a href="mailto:fundamental@cartacapital.com.br">fundamental@cartacapital.com.br</a>
 					<span>
+
+						<br>
+
+					  <br>
+					  <div class='text-center'>
+
+					  	<center>
+
+					  	
+					  		<br>
+
+					  		<a href="http://www.mercadoconfianca.com.br/CartaFundamental.asp?Site_txt=EDITORIAL&Origem_txt=CARTA&Formato_txt=MENUTOPO&Banner_txt=&Versao_txt="><img src="{base_url}pics/Botao_Assinar.jpg" alt="Assine CartaFundamental" class='img-responsive'></a>
+
+					  		<br>
+
+					  		<a href="http://editoraconfianca.com.br/acesso/cartafundamental"><img src="{base_url}pics/Botao_RevistaDigital2.jpg" alt="Área do assinante" class='img-responsive'></a>
+					  	
+
+						
+						</center>
+
+					  </div>
+					 
 				</div>
 
 
@@ -128,6 +165,16 @@
 
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>	
+	<script src="{base_url}/js/jquery.share.js"></script>	
+
+	<script>
+
+	$('#mysocial').share({
+        networks: ['facebook','pinterest','googleplus','twitter','linkedin','tumblr','in1','email','stumbleupon','digg']
+    });
+
+
+	</script>
 		
 </body>
 </html>

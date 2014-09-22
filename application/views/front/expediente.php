@@ -84,10 +84,11 @@
 				</p>
 
 
+
+
 				<p> <strong>Consultora pedagógica:</strong> Maria José Nóbrega<br>
-					<strong>Editora-assistente:</strong> Rafael Gregorioo<br>
-					<strong>Repórter: </strong>Tory Oliveira<br>
-					<strong>Estagiária: </strong>Thais Paiva<br>
+					<strong>Editora-assistente:</strong><a href="mailto:tory@cartacapital.com.br">Tory Oliveira</a><br>
+					<strong>Repórter: </strong><a href="mailto:thais@cartacapital.com.br">Thais Paiva</a> e <a href="mailto:cinthia@cartacapital.com.br">Cinthia Rodrigues</a><br>							
 					<strong>Revisores:</strong> Áli Onaissi (coordenação), Hassan Ayoub e Rita     Leite
 				</p>
 
